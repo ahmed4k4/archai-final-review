@@ -224,6 +224,9 @@ export default function MarketingPage({
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-grad-primary opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500 rounded-full pointer-events-none" />
 
+                  {/* Shine sweep on hover */}
+                  <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
                   <div className="flex items-start justify-between mb-6">
                     <span className="font-mono text-[10px] text-ink-4 tracking-widest">{card.number}</span>
                     <span className="w-12 h-12 grid place-items-center rounded-2xl bg-violet-500/10 border border-violet-500/30 text-violet-300 text-2xl group-hover:rotate-[15deg] transition-transform duration-500">

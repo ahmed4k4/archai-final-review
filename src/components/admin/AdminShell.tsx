@@ -17,20 +17,48 @@ import {
   Languages,
   Bell,
   ChevronRight,
+  PanelLeft,
+  type LucideIcon,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabaseBrowser } from "@/lib/supabase-browser";
 import { AdminLocale, AdminLocaleProvider } from "./AdminI18n";
 
-const nav = [
-  { href: "/admin", key: "overview", icon: LayoutDashboard },
-  { href: "/admin/projects", key: "projects", icon: FolderKanban },
-  { href: "/admin/categories", key: "categories", icon: Sparkles },
-  { href: "/admin/analytics", key: "analytics", icon: BarChart3 },
-  { href: "/admin/settings", key: "settings", icon: Settings },
-  { href: "/admin/tools", key: "tools", icon: Wrench },
-  { href: "/admin/seo", key: "seo", icon: Search },
-] as const;
+type NavEntry = { href: string; key: string; icon: LucideIcon; kb: string };
+type NavSection = { id: string; labelAr: string; labelEn: string; items: NavEntry[] };
+
+const NAV_SECTIONS: NavSection[] = [
+  {
+    id: "main",
+    labelAr: "الرئيسية",
+    labelEn: "MAIN",
+    items: [
+      { href: "/admin", key: "overview", icon: LayoutDashboard, kb: "G" },
+      { href: "/admin/analytics", key: "analytics", icon: BarChart3, kb: "A" },
+    ],
+  },
+  {
+    id: "content",
+    labelAr: "المحتوى",
+    labelEn: "CONTENT",
+    items: [
+      { href: "/admin/projects", key: "projects", icon: FolderKanban, kb: "P" },
+      { href: "/admin/categories", key: "categories", icon: Sparkles, kb: "C" },
+      { href: "/admin/seo", key: "seo", icon: Search, kb: "S" },
+    ],
+  },
+  {
+    id: "system",
+    labelAr: "النظام",
+    labelEn: "SYSTEM",
+    items: [
+      { href: "/admin/tools", key: "tools", icon: Wrench, kb: "T" },
+      { href: "/admin/settings", key: "settings", icon: Settings, kb: "," },
+    ],
+  },
+];
+
+const nav: NavEntry[] = NAV_SECTIONS.flatMap((s) => s.items);
 
 const labels: Record<AdminLocale, Record<string, string>> = {
   ar: {
@@ -75,6 +103,21 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
   const [theme, setTheme] = useState("dark");
   const [commandOpen, setCommandOpen] = useState(false);
   const [commandQuery, setCommandQuery] = useState("");
+  const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    try {
+      setCollapsed(localStorage.getItem("archai-admin-collapsed") === "1");
+    } catch {}
+  }, []);
+
+  function toggleCollapse() {
+    const next = !collapsed;
+    setCollapsed(next);
+    try {
+      localStorage.setItem("archai-admin-collapsed", next ? "1" : "0");
+    } catch {}
+  }
 
   useEffect(() => {
     try {
@@ -166,53 +209,85 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
         {/* ============================================================
             SIDEBAR
             ============================================================ */}
-        <aside className={open ? "admin-sidebar open" : "admin-sidebar"}>
-          <Link href="/admin" className="admin-brand">
-            <img src="/assets/logo.png" alt="Archai" />
-            <div>
-              <strong>ARCHAI</strong>
-              <span>PROJECTS CONTROL</span>
-            </div>
-          </Link>
+        <aside
+          className={`${open ? "open" : ""} ${collapsed ? "collapsed" : ""} admin-sidebar`}
+        >
+          <div className="admin-brand-row">
+            <Link href="/admin" className="admin-brand">
+              <img src="/assets/logo.png" alt="Archai" />
+              <div>
+                <strong>ARCHAI</strong>
+                <span>PROJECTS CONTROL</span>
+              </div>
+            </Link>
+            <button
+              className="admin-collapse-btn"
+              onClick={toggleCollapse}
+              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+              title={collapsed ? "Expand" : "Collapse"}
+            >
+              <PanelLeft size={14} />
+            </button>
+          </div>
 
           <nav>
-            {nav.map((item) => {
-              const Icon = item.icon;
-              const active =
-                pathname === item.href ||
-                (item.href !== "/admin" && pathname.startsWith(item.href));
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={active ? "active" : ""}
-                  onClick={() => setOpen(false)}
-                >
-                  <span className="flex items-center gap-2.5">
-                    <Icon size={15} />
-                    <span>{L[item.key]}</span>
-                  </span>
-                  <small>{item.key.toUpperCase()}</small>
-                </Link>
-              );
-            })}
+            {NAV_SECTIONS.map((section) => (
+              <div key={section.id} className="admin-nav-section">
+                <span className="admin-nav-label">
+                  {locale === "ar" ? section.labelAr : section.labelEn}
+                </span>
+                {section.items.map((item) => {
+                  const Icon = item.icon;
+                  const active =
+                    pathname === item.href ||
+                    (item.href !== "/admin" && pathname.startsWith(item.href));
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={active ? "active" : ""}
+                      onClick={() => setOpen(false)}
+                      title={L[item.key]}
+                    >
+                      <span className="flex items-center gap-2.5 admin-nav-main">
+                        <Icon size={15} />
+                        <span>{L[item.key]}</span>
+                      </span>
+                      <small className="admin-nav-kb">⌘{item.kb}</small>
+                    </Link>
+                  );
+                })}
+              </div>
+            ))}
           </nav>
 
           <div className="admin-sidebar-foot">
             <span className="admin-online-dot" />
-            {locale === "ar" ? "النظام متصل" : "SYSTEM ONLINE"}
+            <span className="admin-foot-text">
+              {locale === "ar" ? "النظام متصل" : "SYSTEM ONLINE"}
+            </span>
           </div>
 
-          <button
-            className="admin-logout flex items-center gap-2"
-            onClick={async () => {
-              await sb.auth.signOut();
-              router.replace("/admin/login");
-            }}
-          >
-            <LogOut size={14} />
-            {L.logout}
-          </button>
+          <div className="admin-user-card">
+            <i>{(email[0] || "A").toUpperCase()}</i>
+            <div className="admin-user-card-info">
+              <span className="admin-user-card-email">{email}</span>
+              <span className="admin-user-card-role">
+                {locale === "ar" ? "مسؤول" : "Administrator"}
+              </span>
+            </div>
+            <button
+              className="admin-user-card-logout"
+              onClick={async () => {
+                await sb.auth.signOut();
+                router.replace("/admin/login");
+              }}
+              aria-label={L.logout}
+              title={L.logout}
+            >
+              <LogOut size={14} />
+            </button>
+          </div>
         </aside>
 
         {open && (
@@ -292,9 +367,8 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
                 <span>{theme === "dark" ? L.light : L.dark}</span>
               </button>
 
-              <div className="admin-user">
+              <div className="admin-user" title={email}>
                 <i>{(email[0] || "A").toUpperCase()}</i>
-                <span>{email}</span>
               </div>
             </div>
           </header>

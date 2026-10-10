@@ -15,8 +15,8 @@ import {
   Sun,
   Moon,
   Languages,
-  Command,
-  X,
+  Bell,
+  ChevronRight,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabaseBrowser } from "@/lib/supabase-browser";
@@ -152,6 +152,9 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
 
   const L = labels[locale];
   const isRTL = locale === "ar";
+  const activeNav = nav.find(
+    (n) => pathname === n.href || (n.href !== "/admin" && pathname.startsWith(n.href))
+  );
 
   return (
     <AdminLocaleProvider locale={locale}>
@@ -238,6 +241,16 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
               <h1>
                 Archai <em>{locale === "ar" ? "مساحة الإدارة" : "Workspace"}</em>
               </h1>
+              {/* Breadcrumb — derived from the active route */}
+              <nav className="admin-breadcrumb" aria-label="Breadcrumb">
+                <Link href="/admin">{L.overview}</Link>
+                {activeNav && activeNav.href !== "/admin" && (
+                  <>
+                    <ChevronRight size={11} />
+                    <span>{L[activeNav.key]}</span>
+                  </>
+                )}
+              </nav>
             </div>
 
             <div className="admin-top-actions">
@@ -260,6 +273,14 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
               >
                 <Languages size={14} />
                 {L.language}
+              </button>
+
+              <button
+                className="admin-tool-button relative"
+                aria-label={locale === "ar" ? "التنبيهات" : "Notifications"}
+              >
+                <Bell size={14} />
+                <span className="admin-notif-dot" />
               </button>
 
               <button

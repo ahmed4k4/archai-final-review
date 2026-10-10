@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { pick, tr, safeUrl } from "@/lib/i18n";
+import { pick, tr, safeUrl, projectCover } from "@/lib/i18n";
 import type { Locale } from "@/lib/types";
 import { viewportOnce } from "@/lib/motion";
 
@@ -69,7 +69,7 @@ export default function Slider({ items, lang, label, id }: SliderProps) {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {items.map((x, j) => {
-          const src = x.featured_image || x.cover_image;
+          const src = projectCover(x);
           const title = pick(x, "title", lang);
           return (
             <article
@@ -82,6 +82,9 @@ export default function Slider({ items, lang, label, id }: SliderProps) {
                   alt={title}
                   loading={j === 0 ? "eager" : "lazy"}
                   decoding="async"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
                   className="absolute inset-0 w-full h-full object-cover"
                   animate={{ scale: j === i ? 1.06 : 1 }}
                   transition={{ duration: 8, ease: "linear" }}

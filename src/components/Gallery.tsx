@@ -46,6 +46,9 @@ export default function Gallery({ images, title, lang }: GalleryProps) {
               key={k}
               src={cur.public_url}
               alt={alt}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).style.opacity = "0.35";
+              }}
               className="w-full h-full object-contain bg-black/40"
               initial={{ opacity: 0, scale: 1.02 }}
               animate={{ opacity: 1, scale: 1 }}

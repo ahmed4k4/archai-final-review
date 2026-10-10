@@ -52,7 +52,6 @@ export default function Page({ params }: { params: { lang: string } }) {
         cards={c.cards}
         outroTitle={c.outroTitle}
         outroText={c.outroText}
-        visual="AICore"
         accentColor="mint"
       />
     </>

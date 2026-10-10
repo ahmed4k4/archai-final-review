@@ -2,9 +2,11 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/motion/ScrollProgress";
-import AuroraBackground from "@/components/visuals/AuroraBackground";
+import CursorGlow from "@/components/motion/CursorGlow";
+import LocaleSync from "@/components/LocaleSync";
 import { getHome } from "@/lib/data";
 import { LOCALES, isLocale, pick } from "@/lib/i18n";
+import type { Locale } from "@/lib/types";
 import { SITE_URL } from "@/lib/supabase";
 import {
   organizationSchema,
@@ -33,7 +35,7 @@ export async function generateMetadata({
       : "Software, AI & Digital Product Engineering");
 
   const description =
-    pick(settings, "home_desc", lang) ||
+    pick(settings, "home_desc", lang as Locale) ||
     (lang === "ar"
       ? "أركاي للحلول البرمجية: نبني المنتجات الرقمية ومنصات الويب وحلول الذكاء الاصطناعي والأنظمة المدمجة وإنترنت الأشياء."
       : "Archai Solutions designs and builds digital products, web platforms, AI-powered workflows, and embedded/IoT systems.");
@@ -169,10 +171,11 @@ export default async function RootLayout({
       />
 
       {/* ============================================================
-          Visual layers
+          Global layers — each page renders its own WebGL Backdrop.
           ============================================================ */}
-      <AuroraBackground />
+      <LocaleSync lang={lang} />
       <ScrollProgress />
+      <CursorGlow />
 
       <Header lang={lang} cats={withProjects} />
 

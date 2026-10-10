@@ -3,8 +3,8 @@ import { SITE_URL } from "./supabase";
 import type { Locale } from "./types";
 
 type SeoOptions = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   keywords?: string[];
   images?: string[];
   type?: "website" | "article";

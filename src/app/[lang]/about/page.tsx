@@ -1,5 +1,5 @@
 import MarketingPage from "@/components/marketing/MarketingPage";
-import Hero3DDisplay from "@/components/marketing/Hero3DDisplay";
+import AboutStats from "@/components/marketing/AboutStats";
 import { pageSeo } from "@/lib/seo";
 import { marketingContent } from "@/lib/marketing-content";
 import { isLocale } from "@/lib/i18n";
@@ -53,28 +53,8 @@ export default function Page({ params }: { params: { lang: string } }) {
         cards={c.cards}
         outroTitle={c.outroTitle}
         outroText={c.outroText}
-        visual="ParticleGlobe"
         accentColor="violet"
-        sectionExtra={
-          <section className="wrap py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-              <Hero3DDisplay
-                name="DataStreams"
-                caption={
-                  lang === "ar"
-                    ? "تدفقات البيانات المتواصلة"
-                    : "CONTINUOUS DATA FLOWS"
-                }
-              />
-              <Hero3DDisplay
-                name="NeonRings"
-                caption={
-                  lang === "ar" ? "حلقات الابتكار" : "RINGS OF INNOVATION"
-                }
-              />
-            </div>
-          </section>
-        }
+        sectionExtra={<AboutStats lang={lang} />}
       />
     </>
   );

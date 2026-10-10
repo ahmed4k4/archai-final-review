@@ -120,6 +120,7 @@ function SortableImage({
         <img
           src={image.public_url}
           alt={image.alt_en || "preview"}
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>

@@ -119,11 +119,28 @@ export default function AdminHome() {
     },
   ];
 
-  const toneClass: Record<string, string> = {
-    violet: "from-violet-500/20 to-violet-500/0 text-violet-300 border-violet-500/30",
-    mint: "from-mint-500/20 to-mint-500/0 text-mint-300 border-mint-500/30",
-    amber: "from-amber-500/20 to-amber-500/0 text-amber-400 border-amber-500/30",
-    rose: "from-rose-500/20 to-rose-500/0 text-rose-400 border-rose-500/30",
+  /* Split tones so the card border/text and the gradient overlay stay independent. */
+  const toneClass: Record<string, { card: string; glow: string; icon: string }> = {
+    violet: {
+      card: "border-violet-500/25 text-violet-300 hover:border-violet-500/50",
+      glow: "from-violet-500/20 to-transparent",
+      icon: "bg-violet-500/15 border-violet-500/30",
+    },
+    mint: {
+      card: "border-mint-500/25 text-mint-300 hover:border-mint-500/50",
+      glow: "from-mint-500/20 to-transparent",
+      icon: "bg-mint-500/15 border-mint-500/30",
+    },
+    amber: {
+      card: "border-amber-500/25 text-amber-400 hover:border-amber-500/50",
+      glow: "from-amber-500/20 to-transparent",
+      icon: "bg-amber-500/15 border-amber-500/30",
+    },
+    rose: {
+      card: "border-rose-500/25 text-rose-400 hover:border-rose-500/50",
+      glow: "from-rose-500/20 to-transparent",
+      icon: "bg-rose-500/15 border-rose-500/30",
+    },
   };
 
   return (
@@ -153,33 +170,31 @@ export default function AdminHome() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {cards.map((card, i) => {
           const Icon = card.icon;
+          const tone = toneClass[card.tone];
           return (
             <motion.div
               key={card.label}
-              className={`relative overflow-hidden rounded-2xl border bg-[var(--ad-panel)] p-5 ${toneClass[card.tone]}`}
+              className={`group relative overflow-hidden rounded-2xl border bg-[var(--ad-panel)] p-5 transition-colors ${tone.card}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -3 }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${toneClass[card.tone]}`}
-                style={{ opacity: 0.4 }}
-              />
+              <div className={`absolute inset-0 bg-gradient-to-br ${tone.glow} opacity-50`} />
               <div className="relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-ink-3">
                     {card.label}
                   </span>
-                  <span
-                    className={`w-9 h-9 grid place-items-center rounded-xl bg-black/20 border`}
-                  >
+                  <span className={`w-9 h-9 grid place-items-center rounded-xl border ${tone.icon}`}>
                     <Icon size={16} />
                   </span>
                 </div>
-                <div className="font-display text-3xl font-medium text-ink-0">
+                <div className="font-display text-3xl font-medium text-ink-0 tabular-nums">
                   {loading ? "—" : <AnimatedNumber value={card.value} />}
                 </div>
-                <div className="mt-2 text-[10px] font-mono uppercase tracking-widest text-ink-4">
+                <div className="mt-2 flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-ink-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-mint-400/70" />
                   {ar ? "بيانات مباشرة" : "Live data"}
                 </div>
               </div>
@@ -318,13 +333,14 @@ export default function AdminHome() {
                   <Link
                     key={p.id}
                     href={`/admin/projects`}
-                    className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-violet-500/8 transition-colors group"
+                    className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-violet-500/10 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-black/30 overflow-hidden shrink-0">
                       {p.cover_image ? (
                         <img
                           src={p.cover_image}
                           alt={title}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       ) : (

@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { pick, tr, safeUrl } from "@/lib/i18n";
+import { useState } from "react";
+import { pick, tr, safeUrl, projectCover } from "@/lib/i18n";
 import type { Locale } from "@/lib/types";
 import { viewportOnce } from "@/lib/motion";
 
@@ -9,9 +10,9 @@ type ProjectCardProps = { p: any; lang: Locale };
 
 export default function ProjectCard({ p, lang }: ProjectCardProps) {
   const T = tr(lang);
-  const ar = lang === "ar";
   const title = pick(p, "title", lang);
-  const cover = p.cover_thumb || p.cover_image;
+  const cover = projectCover(p);
+  const [broken, setBroken] = useState(false);
   const href = `/${lang}/projects/${p.id}`;
 
   return (
@@ -29,12 +30,13 @@ export default function ProjectCard({ p, lang }: ProjectCardProps) {
         className="block relative aspect-[16/10] overflow-hidden bg-violet-900/20"
         aria-label={`${T("details")} — ${title}`}
       >
-        {cover ? (
+        {cover && !broken ? (
           <motion.img
             src={cover}
             alt={title}
             loading="lazy"
             decoding="async"
+            onError={() => setBroken(true)}
             className="w-full h-full object-cover"
             whileHover={{ scale: 1.06 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}

@@ -6,9 +6,9 @@ import dynamic from "next/dynamic";
 import { tr, pick } from "@/lib/i18n";
 import type { Locale } from "@/lib/types";
 import { MagneticButton, AnimatedNumber } from "./motion";
-import { textReveal, fadeUp, stagger, staggerSlow, viewportOnce } from "@/lib/motion";
+import { textReveal } from "@/lib/motion";
 
-const Hero3DScene = dynamic(() => import("./Hero3DScene"), { ssr: false, loading: () => null });
+const DynamicVisual = dynamic(() => import("./visuals/DynamicVisual"), { ssr: false, loading: () => null });
 const HeroParticles = dynamic(() => import("./HeroParticles"), { ssr: false });
 
 type HeroProps = {
@@ -80,7 +80,7 @@ export default function Hero({ lang, settings, count }: HeroProps) {
         className="absolute inset-y-0 right-0 w-full lg:w-[55%] pointer-events-none"
         aria-hidden
       >
-        <Hero3DScene />
+        <DynamicVisual name="HeroCore" className="absolute inset-0" />
       </div>
 
       {/* ============================================================
@@ -105,15 +105,12 @@ export default function Hero({ lang, settings, count }: HeroProps) {
           </linearGradient>
         </defs>
         {[200, 300, 400].map((y, i) => (
-          <motion.path
+          <path
             key={i}
             d={`M0,${y} Q300,${y - 100} 600,${y} T1200,${y}`}
             stroke="url(#heroCircuitGrad)"
             strokeWidth={1.5 - i * 0.3}
             fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 2.5, delay: i * 0.3, ease: "easeInOut" }}
           />
         ))}
         {[
@@ -228,6 +225,23 @@ export default function Hero({ lang, settings, count }: HeroProps) {
 
           {/* Main content */}
           <div className="lg:col-span-9 order-1 lg:order-2">
+            {/* Welcome badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-mint-500/30 bg-mint-500/10"
+            >
+              <motion.span
+                className="w-1.5 h-1.5 rounded-full bg-mint-400"
+                animate={{ opacity: [1, 0.3, 1] }}
+                transition={{ duration: 1.8, repeat: Infinity }}
+              />
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-mint-300">
+                {ar ? "أهلاً بكم في أركاي" : "WELCOME TO ARCHAI"}
+              </span>
+            </motion.div>
+
             {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -300,8 +314,31 @@ export default function Hero({ lang, settings, count }: HeroProps) {
             </motion.div>
 
             {/* Meta strip */}
+            {/* Stats */}
             <motion.div
-              className="mt-12 pt-6 border-t border-violet-500/15 flex flex-wrap gap-6"
+              className="mt-10 grid grid-cols-3 gap-4 max-w-lg"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              {[
+                { v: count, l: ar ? "مشروع منجز" : "Projects" },
+                { v: 40, l: ar ? "عميل سعيد" : "Clients" },
+                { v: 7, l: ar ? "سنوات خبرة" : "Years" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <div className="font-display text-3xl font-medium bg-grad-text-light dark:bg-grad-text bg-clip-text text-transparent">
+                    <AnimatedNumber value={s.v} />+
+                  </div>
+                  <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-ink-4">
+                    {s.l}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="mt-8 pt-6 border-t border-violet-500/15 flex flex-wrap gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.1 }}

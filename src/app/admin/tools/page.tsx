@@ -253,7 +253,7 @@ export default function AdminTools() {
                   key={tool.href}
                   href={tool.href}
                   {...extra}
-                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-violet-500/8 transition-colors group"
+                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-violet-500/10 transition-colors group"
                 >
                   <span className="w-10 h-10 grid place-items-center rounded-xl bg-violet-500/15 text-violet-300 group-hover:bg-grad-primary group-hover:text-white transition-all">
                     <Icon size={16} />

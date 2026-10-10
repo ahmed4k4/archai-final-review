@@ -3,17 +3,19 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode, ComponentType } from "react";
 import type { Locale } from "@/lib/types";
-import AuroraBackground from "../visuals/AuroraBackground";
+import Backdrop from "../visuals/Backdrop";
 import DynamicVisual, { type VisualName } from "../visuals/DynamicVisual";
+import Hero3DDisplay from "./Hero3DDisplay";
+import { type PageKey, stripFor, sceneFor } from "../visuals/PageScenes";
 import { Reveal, Stagger, StaggerItem, MagneticButton } from "../motion";
-import { fadeUp, scaleIn, textReveal, staggerSlow, viewportOnce } from "@/lib/motion";
+import { fadeUp, scaleIn, textReveal } from "@/lib/motion";
 
 export type MarketingCard = {
   number: string;
   icon: string;
   title: string;
   body: string;
-  tags?: string[];
+  tags?: readonly string[];
 };
 
 export type MarketingPageProps = {
@@ -27,11 +29,13 @@ export type MarketingPageProps = {
   primaryHref?: string;
   secondary?: string;
   secondaryHref?: string;
-  cards: MarketingCard[];
+  cards: readonly MarketingCard[];
   outroTitle: string;
   outroText: string;
-  /** 3D visual scene to use for the hero */
-  visual: VisualName;
+  /** 3D visual scene to use for the hero (defaults to the scene mapped to `kind`) */
+  visual?: VisualName;
+  /** Extra 3D scenes shown mid-page (defaults to two, distinct from the hero) */
+  stripVisuals?: [VisualName, VisualName];
   /** Optional custom hero render (overrides visual) */
   heroExtra?: ReactNode;
   /** Optional section before outro */
@@ -55,11 +59,15 @@ export default function MarketingPage({
   outroTitle,
   outroText,
   visual,
+  stripVisuals,
   heroExtra,
   sectionExtra,
   accentColor = "violet",
 }: MarketingPageProps) {
   const ar = lang === "ar";
+  const pageKey = (kind in { home: 1, services: 1, industries: 1, about: 1, process: 1, insights: 1, contact: 1, "case-studies": 1, careers: 1, faq: 1 } ? kind : "services") as PageKey;
+  const strip = stripVisuals ?? stripFor(pageKey);
+  const heroScene: VisualName = visual ?? sceneFor(pageKey);
   const accentClasses = {
     violet: { text: "text-violet-300", bg: "bg-violet-500/10", border: "border-violet-500/30" },
     mint: { text: "text-mint-300", bg: "bg-mint-500/10", border: "border-mint-500/30" },
@@ -72,7 +80,7 @@ export default function MarketingPage({
       dir={ar ? "rtl" : "ltr"}
       className={`relative overflow-hidden min-h-screen marketing-${kind}`}
     >
-      <AuroraBackground />
+      <Backdrop name={pageKey} />
 
       {/* ============================================================
           HERO — 3D scene + headline
@@ -168,7 +176,7 @@ export default function MarketingPage({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <DynamicVisual name={visual} className="absolute inset-0" />
+            <DynamicVisual name={heroScene} className="absolute inset-0" />
             {heroExtra}
           </motion.div>
         </div>
@@ -258,6 +266,23 @@ export default function MarketingPage({
       </section>
 
       {/* ============================================================
+          MID-PAGE 3D VISUAL STRIP — every marketing page gets two more
+          distinct animated scenes (fallback keeps them unique per hero).
+          ============================================================ */}
+      <section className="relative py-20 lg:py-28 hidden md:block">
+        <div className="wrap">
+          <Reveal variant={fadeUp}>
+            <span className="section-kicker">{ar ? "أنظمة مرئية" : "LIVE SYSTEMS"}</span>
+          </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            {strip.map((v) => (
+              <Hero3DDisplay key={v} name={v} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
           OPTIONAL EXTRA SECTION
           ============================================================ */}
       {sectionExtra}
@@ -267,6 +292,9 @@ export default function MarketingPage({
           ============================================================ */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 nebula opacity-40" aria-hidden />
+        <div className="absolute inset-0 opacity-30 pointer-events-none hidden md:block" aria-hidden>
+          <DynamicVisual name={strip[1]} className="absolute inset-0" />
+        </div>
 
         <div className="wrap relative text-center max-w-4xl mx-auto">
           <Reveal variant={scaleIn}>

@@ -30,6 +30,11 @@
   --line-violet: rgba(124, 92, 255, 0.4);
   --line-mint: rgba(76, 226, 208, 0.4);
   --bg-glass: rgba(5, 8, 18, 0.72);
+
+  /* Admin surfaces */
+  --ad-panel: rgba(10, 14, 31, 0.72);
+  --ad-panel-2: rgba(255, 255, 255, 0.03);
+  --ad-line: rgba(173, 151, 255, 0.12);
 }
 
 :root[data-theme="light"] {
@@ -49,6 +54,11 @@
   --line-violet: rgba(82, 48, 209, 0.3);
   --line-mint: rgba(13, 120, 111, 0.3);
   --bg-glass: rgba(255, 255, 255, 0.82);
+
+  /* Admin surfaces (light) */
+  --ad-panel: rgba(255, 255, 255, 0.9);
+  --ad-panel-2: rgba(14, 16, 36, 0.03);
+  --ad-line: rgba(14, 16, 36, 0.12);
 }
 
 /* Reset */

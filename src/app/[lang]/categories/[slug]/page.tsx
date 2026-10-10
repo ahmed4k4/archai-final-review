@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Slider from "@/components/Slider";
 import Explorer from "@/components/Explorer";
 import CategoryCards from "@/components/CategoryCards";
+import Backdrop from "@/components/visuals/Backdrop";
 import { getHome } from "@/lib/data";
 import { LOCALES, pick, tr } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/supabase";
@@ -66,6 +67,7 @@ export default async function CategoryPage({
 
   return (
     <main className="wrap py-12">
+      <Backdrop name="category" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

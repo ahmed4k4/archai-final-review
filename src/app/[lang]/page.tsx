@@ -2,6 +2,8 @@ import Hero from "../../components/Hero";
 import Slider from "../../components/Slider";
 import Explorer from "../../components/Explorer";
 import CategoryCards from "../../components/CategoryCards";
+import Backdrop from "../../components/visuals/Backdrop";
+import ClientShowcase from "../../components/ClientShowcase";
 import { getHome } from "../../lib/data";
 import { tr } from "../../lib/i18n";
 
@@ -19,6 +21,7 @@ export default async function Home({ params }) {
 
   return (
     <>
+      <Backdrop name="home" />
       {vis.hero !== false ? <Hero lang={lang} settings={settings} count={projects.length} /> : null}
       <main className="wrap" id="app">
         {!configured ? (
@@ -39,6 +42,7 @@ export default async function Home({ params }) {
         ) : null}
         <Explorer cats={cats} projects={projects} lang={lang} limit={settings.projects_per_category || 6} />
       </main>
+      <ClientShowcase lang={lang} />
     </>
   );
 }

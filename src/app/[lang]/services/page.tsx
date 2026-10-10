@@ -1,5 +1,4 @@
 import MarketingPage from "@/components/marketing/MarketingPage";
-import Hero3DDisplay from "@/components/marketing/Hero3DDisplay";
 import { pageSeo } from "@/lib/seo";
 import { marketingContent } from "@/lib/marketing-content";
 import { isLocale } from "@/lib/i18n";
@@ -60,30 +59,7 @@ export default function Page({ params }: { params: { lang: string } }) {
         cards={c.cards}
         outroTitle={c.outroTitle}
         outroText={c.outroText}
-        visual="MetallicPolyhedron"
         accentColor="violet"
-        sectionExtra={
-          <section className="wrap py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <Hero3DDisplay
-                name="CircuitBoard"
-                caption={
-                  lang === "ar"
-                    ? "هندسة الدوائر الرقمية"
-                    : "DIGITAL CIRCUIT ENGINEERING"
-                }
-              />
-              <Hero3DDisplay
-                name="FloatingCards"
-                caption={
-                  lang === "ar"
-                    ? "منتجات رقمية متعددة الطبقات"
-                    : "MULTI-LAYER DIGITAL PRODUCTS"
-                }
-              />
-            </div>
-          </section>
-        }
       />
     </>
   );

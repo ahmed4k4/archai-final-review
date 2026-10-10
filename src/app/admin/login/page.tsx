@@ -1,12 +1,20 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Eye, EyeOff, Shield } from "lucide-react";
 import { supabaseBrowser } from "@/lib/supabase-browser";
 
 export default function AdminLogin() {
+  return (
+    <Suspense fallback={<div className="admin-loading">Loading…</div>}>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const sb = supabaseBrowser();
   const router = useRouter();
   const qs = useSearchParams();

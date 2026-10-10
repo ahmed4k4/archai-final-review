@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
 import ProjectCard from "@/components/ProjectCard";
+import Backdrop from "@/components/visuals/Backdrop";
 import { getHome, getProject } from "@/lib/data";
-import { LOCALES, pick, tr, safeUrl } from "@/lib/i18n";
+import { LOCALES, pick, tr, safeUrl, projectImages } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/supabase";
 import { pageSeo } from "@/lib/seo";
 import {
@@ -74,12 +75,7 @@ export default async function ProjectPage({
   const tg = p.project_technologies.map((x) => x.technology);
   const ins = p.project_industries.map((x) => x.industry);
 
-  let images = [...(p.project_images || [])].sort(
-    (a, b) => Number(b.is_hero) - Number(a.is_hero) || a.sort_order - b.sort_order
-  );
-  if (!images.length && p.cover_image) {
-    images = [{ public_url: p.cover_image } as any];
-  }
+  const images = projectImages(p);
 
   const score = (x: any) =>
     (x.category_id && x.category_id === p.category_id ? 2 : 0) +
@@ -123,6 +119,7 @@ export default async function ProjectPage({
 
   return (
     <main className="wrap py-12">
+      <Backdrop name="project" />
       {/* Schemas */}
       <script
         type="application/ld+json"

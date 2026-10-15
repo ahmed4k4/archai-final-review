@@ -5,10 +5,12 @@ import type { ReactNode, ComponentType } from "react";
 import type { Locale } from "@/lib/types";
 import Backdrop from "../visuals/Backdrop";
 import DynamicVisual, { type VisualName } from "../visuals/DynamicVisual";
-import Hero3DDisplay from "./Hero3DDisplay";
-import { type PageKey, stripFor, sceneFor } from "../visuals/PageScenes";
+import { type PageKey, sceneFor } from "../visuals/PageScenes";
 import { Reveal, Stagger, StaggerItem, MagneticButton } from "../motion";
 import { fadeUp, scaleIn, textReveal } from "@/lib/motion";
+import Spotlight from "../reactbits/Spotlight";
+import ShinyText from "../reactbits/ShinyText";
+import BlurText from "../reactbits/BlurText";
 
 export type MarketingCard = {
   number: string;
@@ -40,8 +42,8 @@ export type MarketingPageProps = {
   heroExtra?: ReactNode;
   /** Optional section before outro */
   sectionExtra?: ReactNode;
-  /** Accent color for the page (violet | mint | rose) */
-  accentColor?: "violet" | "mint" | "rose";
+  /** Accent color for the page (arc | silver | copper) */
+  accentColor?: "arc" | "silver" | "copper" | "violet" | "mint" | "rose";
 };
 
 export default function MarketingPage({
@@ -59,20 +61,23 @@ export default function MarketingPage({
   outroTitle,
   outroText,
   visual,
-  stripVisuals,
   heroExtra,
   sectionExtra,
   accentColor = "violet",
 }: MarketingPageProps) {
   const ar = lang === "ar";
-  const pageKey = (kind in { home: 1, services: 1, industries: 1, about: 1, process: 1, insights: 1, contact: 1, "case-studies": 1, careers: 1, faq: 1 } ? kind : "services") as PageKey;
-  const strip = stripVisuals ?? stripFor(pageKey);
+  const pageKey = (kind in { home: 1, services: 1, industries: 1, about: 1, process: 1, insights: 1, contact: 1, "case-studies": 1, careers: 1, faq: 1, portfolio: 1 } ? kind : "services") as PageKey;
   const heroScene: VisualName = visual ?? sceneFor(pageKey);
-  const accentClasses = {
-    violet: { text: "text-violet-300", bg: "bg-violet-500/10", border: "border-violet-500/30" },
-    mint: { text: "text-mint-300", bg: "bg-mint-500/10", border: "border-mint-500/30" },
-    rose: { text: "text-rose-400", bg: "bg-rose-500/10", border: "border-rose-500/30" },
-  }[accentColor];
+  const accentClasses =
+    {
+      arc: { text: "text-arc-300", bg: "bg-arc-500/10", border: "border-arc-500/30" },
+      silver: { text: "text-silver-200", bg: "bg-silver-500/10", border: "border-silver-500/30" },
+      copper: { text: "text-copper-400", bg: "bg-copper-500/10", border: "border-copper-500/30" },
+      // Legacy aliases → brand colors
+      violet: { text: "text-arc-300", bg: "bg-arc-500/10", border: "border-arc-500/30" },
+      mint: { text: "text-silver-200", bg: "bg-silver-500/10", border: "border-silver-500/30" },
+      rose: { text: "text-copper-400", bg: "bg-copper-500/10", border: "border-copper-500/30" },
+    }[accentColor];
 
   return (
     <main
@@ -99,7 +104,7 @@ export default function MarketingPage({
               transition={{ duration: 0.5 }}
             >
               <span className="w-6 h-px bg-current" />
-              {eyebrow}
+              <ShinyText speed={5}>{eyebrow}</ShinyText>
             </motion.span>
 
             <motion.h1
@@ -122,7 +127,7 @@ export default function MarketingPage({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              {description}
+              <BlurText text={description} delay={0.02} />
             </motion.p>
 
             <motion.div
@@ -151,9 +156,9 @@ export default function MarketingPage({
               transition={{ delay: 0.75, duration: 0.6 }}
             >
               {[
-                { n: "01", t: ar ? "هندسة واضحة" : "Clear engineering" },
-                { n: "02", t: ar ? "تصميم قابل للتوسع" : "Built to scale" },
-                { n: "03", t: ar ? "تركيز على الأثر" : "Outcome focused" },
+                { n: "01", t: ar ? "ثلاثة تخصصات" : "Three disciplines" },
+                { n: "02", t: ar ? "مع تطور أعمالك" : "Built to evolve" },
+                { n: "03", t: ar ? "معايير هندسية" : "Engineering standards" },
               ].map((item, i) => (
                 <motion.div
                   key={item.n}
@@ -216,6 +221,7 @@ export default function MarketingPage({
           <Stagger delay={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {cards.map((card, i) => (
               <StaggerItem key={card.number}>
+                <Spotlight color="rgba(46,210,255,0.28)" className="rounded-3xl h-full">
                 <motion.article
                   className="group relative h-full p-7 rounded-3xl glass overflow-hidden"
                   whileHover={{ y: -8 }}
@@ -262,6 +268,7 @@ export default function MarketingPage({
                     transition={{ duration: 0.4 }}
                   />
                 </motion.article>
+                </Spotlight>
               </StaggerItem>
             ))}
           </Stagger>
@@ -269,17 +276,36 @@ export default function MarketingPage({
       </section>
 
       {/* ============================================================
-          MID-PAGE 3D VISUAL STRIP — every marketing page gets two more
-          distinct animated scenes (fallback keeps them unique per hero).
+          MID-PAGE CAPABILITY STRIP — CSS only (no extra WebGL canvas).
+          Keeps exactly one 3D scene per page (the hero).
           ============================================================ */}
-      <section className="relative py-20 lg:py-28 hidden md:block">
+      <section className="relative py-20 lg:py-28">
         <div className="wrap">
           <Reveal variant={fadeUp}>
-            <span className="section-kicker">{ar ? "أنظمة مرئية" : "LIVE SYSTEMS"}</span>
+            <span className="section-kicker">{ar ? "كيف نعمل" : "HOW WE WORK"}</span>
           </Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-            {strip.map((v) => (
-              <Hero3DDisplay key={v} name={v} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
+            {(ar
+              ? [
+                  { n: "01", t: "نبدأ بالمشكلة", d: "نفهم المستخدم وسير العمل والقيود قبل اختيار التقنية." },
+                  { n: "02", t: "نصمم للنمو", d: "بنية واضحة تقلل التعقيد وتترك مجالًا للتطوير." },
+                  { n: "03", t: "نختبر ما نبني", d: "الجودة والأمان والأداء ضمن دورة التطوير." },
+                ]
+              : [
+                  { n: "01", t: "Start with the problem", d: "Understand users, workflows and constraints before choosing technology." },
+                  { n: "02", t: "Design for growth", d: "Clear architecture that reduces complexity and leaves room to evolve." },
+                  { n: "03", t: "Verify what we build", d: "Quality, security and performance throughout delivery." },
+                ]
+            ).map((item) => (
+              <div
+                key={item.n}
+                className="kb-card glass rounded-3xl p-7 hover:-translate-y-1.5 transition-transform duration-500"
+                style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
+              >
+                <span className="font-mono text-[10px] tracking-widest text-ink-4">{item.n}</span>
+                <h3 className="font-display text-xl text-ink-0 mt-3 mb-2">{item.t}</h3>
+                <p className="text-sm leading-relaxed text-ink-3">{item.d}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -295,9 +321,7 @@ export default function MarketingPage({
           ============================================================ */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 nebula opacity-40" aria-hidden />
-        <div className="absolute inset-0 opacity-30 pointer-events-none hidden md:block" aria-hidden>
-          <DynamicVisual name={strip[1]} className="absolute inset-0" />
-        </div>
+        <div className="absolute inset-0 grid-floor opacity-25" aria-hidden />
 
         <div className="wrap relative text-center max-w-4xl mx-auto">
           <Reveal variant={scaleIn}>

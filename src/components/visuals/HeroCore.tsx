@@ -1,14 +1,7 @@
 "use client";
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import {
-  RoundedBox,
-  MeshDistortMaterial,
-  MeshTransmissionMaterial,
-  Environment,
-  Lightformer,
-  Line,
-} from "@react-three/drei";
+import { Environment, Lightformer } from "@react-three/drei";
 import {
   EffectComposer,
   Bloom,
@@ -17,167 +10,181 @@ import {
 } from "@react-three/postprocessing";
 import {
   AdditiveBlending,
-  CatmullRomCurve3,
+  BackSide,
   Color,
+  Euler,
+  Matrix4,
+  Quaternion,
   Vector2,
   Vector3,
 } from "three";
-import type { Group, Mesh } from "three";
+import type { Group, Mesh, Points, ShaderMaterial, InstancedMesh } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE, HEX, EASINGS, MOTION } from "./scene-system";
+import { COLORS, EASINGS, mulberry32 } from "./scene-system";
 
 /* ==================================================================== *
- * HeroCore — "AI Processing Core"
+ * HeroCore — "Planet + Orbits"   (v16 rebuild)
  *
- * The story: a glass compute cube sits inside a PCB (three orbiting
- * circuit rings). 24 compute nodes populate the rings and light up as
- * they work. Dashed data lines wire the nodes together and packets
- * stream along them. The whole thing assembles over five narrative
- * beats, then breathes forever.
+ * A realistic planet suspended in deep space: a shader-lit globe with
+ * continents + fresnel atmosphere, three tilted orbital rings carrying
+ * twelve moons, a 200-rock asteroid belt, and a 500-point star layer.
  *
- * Every shape here is *symbolic*: a cube is a chip, a ring is a PCB
- * trace, a node is a compute unit, a line is a data bus.
+ * Palette — official brand only:
+ *   Arc Blue #2ED2FF · Silver #CCD3DA · Copper #C48A5C · Carbon #1B2228
+ *
+ * Layers:
+ *   1  Planet         — icosahedron surface shader + physical shell
+ *   2  Clouds         — translucent drifting shell above the surface
+ *   3  Atmosphere     — back-side fresnel glow around the globe
+ *   4  Orbits         — 3 torus rings, distinct tilt + speed, emissive
+ *   5  Moons          — 12 small spheres orbiting on the rings + pulse
+ *   6  Asteroid belt  — InstancedMesh of 200 rocks (drift + rotate)
+ *   7  Starfield      — 500 points in-scene
+ *
+ * Motion on three levels per element: internal spin / wobble, orbital
+ * drift, and scroll response (camera dolly + spin-up).
  * ==================================================================== */
 
+const ARC = COLORS.arc; // #2ED2FF
+const ARC_SOFT = COLORS.arcSoft; // #8AE8FF
+const SILVER = COLORS.silver; // #CCD3DA
+const COPPER = COLORS.copper; // #C48A5C
+const CARBON = COLORS.carbon; // #1B2228
+
+const PLANET_R = 1.4;
+
 /* ------------------------------------------------------------------ *
- * Layer 1 — BACKGROUND (radial gradient + light noise, cheap)
+ * 1 — PLANET SURFACE SHADER
+ * Continents from layered value-noise, oceans in carbon, land in silver,
+ * with an arc-blue fresnel rim so the globe glows at the edge.
  * ------------------------------------------------------------------ */
 
-const BG_VERT = /* glsl */ `
+const PLANET_VERT = /* glsl */ `
+  varying vec3 vN;
+  varying vec3 vP;
   varying vec2 vUv;
   void main() {
+    vN = normalize(mat3(modelMatrix) * normal);
+    vP = (modelMatrix * vec4(position, 1.0)).xyz;
     vUv = uv;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `;
 
-const BG_FRAG = /* glsl */ `
+const PLANET_FRAG = /* glsl */ `
   uniform float uTime;
-  uniform vec3 uA;
-  uniform vec3 uB;
-  uniform vec3 uC;
+  uniform vec3  uOcean;
+  uniform vec3  uLand;
+  uniform vec3  uRim;
+  varying vec3 vN;
+  varying vec3 vP;
   varying vec2 vUv;
 
-  float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453); }
-  float noise(vec2 p){
-    vec2 i = floor(p), f = fract(p);
-    vec2 u = f*f*(3.0-2.0*f);
-    return mix(mix(hash(i), hash(i+vec2(1,0)), u.x),
-               mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), u.x), u.y);
+  float hash(vec3 p){ return fract(sin(dot(p, vec3(127.1,311.7,74.7)))*43758.5453); }
+  float noise(vec3 p){
+    vec3 i = floor(p), f = fract(p);
+    f = f*f*(3.0-2.0*f);
+    return mix(mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x),
+                   mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+               mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x),
+                   mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y), f.z);
+  }
+  float fbm(vec3 p){
+    float v = 0.0, a = 0.5;
+    for(int i=0;i<5;i++){ v += a * noise(p); p *= 2.03; a *= 0.5; }
+    return v;
   }
 
   void main(){
-    vec2 uv = vUv;
-    float t = uTime * 0.04;
-
-    /* three corner gradients blended */
-    float dA = 1.0 - smoothstep(0.0, 1.4, distance(uv, vec2(0.15, 0.85)));
-    float dB = 1.0 - smoothstep(0.0, 1.4, distance(uv, vec2(0.85, 0.15)));
-    float dC = 1.0 - smoothstep(0.0, 1.6, distance(uv, vec2(0.5, 0.5)));
-
-    float n = noise(uv * 3.0 + t) * 0.4 + 0.6;
-
-    vec3 col = uA * dA + uB * dB + uC * dC;
-    col *= n;
-
-    float alpha = (dA + dB) * 0.28 + dC * 0.18;
-    gl_FragColor = vec4(col, alpha);
+    vec3 dir = normalize(vP);
+    float land = fbm(dir * 2.6 + 12.0);
+    float mask = smoothstep(0.48, 0.62, land);      // continents
+    float detail = fbm(dir * 7.0) * 0.25;
+    vec3 col = mix(uOcean, uLand, mask);
+    col += detail * uLand;
+    // polar ice caps in silver
+    float lat = abs(dir.y);
+    col = mix(col, uLand, smoothstep(0.78, 0.95, lat) * 0.7);
+    // day/night terminator from a fixed sun direction
+    float lit = clamp(dot(vN, normalize(vec3(0.6, 0.5, 0.7))), 0.0, 1.0);
+    col *= 0.35 + lit * 0.95;
+    // arc-blue atmospheric rim
+    float fres = pow(1.0 - abs(dot(vN, vec3(0.0, 0.0, 1.0))), 2.4);
+    col += uRim * fres * 0.9;
+    gl_FragColor = vec4(col, 1.0);
   }
 `;
 
-function Backdrop() {
+function Planet({ reveal }: { reveal: (d: number, s?: number) => number }) {
+  const group = useRef<Group>(null);
+  const clouds = useRef<Mesh>(null);
+  const surface = useRef<ShaderMaterial>(null);
+
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uA: { value: new Color(HEX.violet) },
-      uB: { value: new Color(HEX.mint) },
-      uC: { value: new Color(HEX.rose) },
+      uOcean: { value: new Color("#101820") },
+      uLand: { value: new Color(SILVER) },
+      uRim: { value: new Color(ARC) },
     }),
     [],
   );
-  useFrame((state) => {
-    uniforms.uTime.value = state.clock.elapsedTime;
-  });
-  return (
-    <mesh position={[0, 0, -8]} scale={[26, 16, 1]}>
-      <planeGeometry args={[1, 1]} />
-      <shaderMaterial
-        vertexShader={BG_VERT}
-        fragmentShader={BG_FRAG}
-        uniforms={uniforms}
-        transparent
-        depthWrite={false}
-        blending={AdditiveBlending}
-      />
-    </mesh>
-  );
-}
 
-/* ------------------------------------------------------------------ *
- * Layer 2 — CORE CUBE (glass chip with a plasma brain)
- * ------------------------------------------------------------------ */
-
-type Reveal = (delay: number, duration?: number) => number;
-
-function CoreCube({ reveal }: { reveal: Reveal }) {
-  const group = useRef<Group>(null);
-  const plasma = useRef<Mesh>(null);
   useFrame((state, delta) => {
-    const t = state.clock.elapsedTime;
-    const r = reveal(0);
     if (group.current) {
-      group.current.scale.setScalar(r);
-      group.current.rotation.y += delta * MOTION.base;
-      group.current.rotation.x = Math.sin(t * 0.5) * 0.05;
+      // internal spin + subtle wobble
+      group.current.rotation.y += delta * 0.05;
+      group.current.rotation.z =
+        Math.sin(state.clock.elapsedTime * 0.25) * 0.04;
+      group.current.rotation.x = Math.cos(state.clock.elapsedTime * 0.2) * 0.03;
+      const s = 0.9 + reveal(0.1) * 0.1;
+      group.current.scale.setScalar(s);
     }
-    if (plasma.current) {
-      plasma.current.rotation.y -= delta * MOTION.fast;
-      plasma.current.scale.setScalar(0.9 + Math.sin(t * 2.2) * 0.06);
+    if (clouds.current) {
+      clouds.current.rotation.y += delta * 0.08;
+      clouds.current.rotation.x =
+        Math.sin(state.clock.elapsedTime * 0.15) * 0.05;
     }
+    if (surface.current) uniforms.uTime.value = state.clock.elapsedTime;
   });
+
   return (
-    <group ref={group} scale={0.001}>
-      {/* beveled glass chip */}
-      <RoundedBox args={[1.6, 1.6, 1.6]} radius={0.08} smoothness={8}>
-        <MeshTransmissionMaterial
-          transmission={1}
-          thickness={3}
-          roughness={0.02}
-          chromaticAberration={0.6}
-          anisotropy={0.4}
-          distortion={0.3}
-          distortionScale={0.2}
-          temporalDistortion={0.1}
-          ior={1.5}
-          samples={12}
-          resolution={512}
-          backside
-          color="#c9bcff"
-          attenuationColor={PALETTE.violet.dark}
-          attenuationDistance={2}
-        />
-      </RoundedBox>
-      {/* the plasma "brain" inside */}
-      <mesh ref={plasma} scale={0.42}>
-        <icosahedronGeometry args={[1, 24]} />
-        <MeshDistortMaterial
-          color={PALETTE.violet.base}
-          emissive={PALETTE.mint.emissive}
-          emissiveIntensity={1.6}
-          roughness={0.1}
-          metalness={0.8}
-          distort={0.5}
-          speed={3}
+    <group ref={group}>
+      {/* Surface — custom shader on an icosahedron for a faceted-but-smooth look */}
+      <mesh>
+        <icosahedronGeometry args={[PLANET_R, 6]} />
+        <shaderMaterial
+          ref={surface}
+          vertexShader={PLANET_VERT}
+          fragmentShader={PLANET_FRAG}
+          uniforms={uniforms}
         />
       </mesh>
-      {/* inner core glow */}
-      <mesh scale={0.22}>
-        <sphereGeometry args={[1, 48, 48]} />
-        <meshBasicMaterial
-          color={PALETTE.mint.light}
+
+      {/* Physical shell — specular highlight / metalness for a real body */}
+      <mesh scale={1.004}>
+        <icosahedronGeometry args={[PLANET_R, 6]} />
+        <meshPhysicalMaterial
+          color={CARBON}
+          metalness={0.9}
+          roughness={0.2}
           transparent
-          opacity={0.9}
-          toneMapped={false}
+          opacity={0.35}
+          clearcoat={1}
+          clearcoatRoughness={0.15}
+        />
+      </mesh>
+
+      {/* Cloud layer — translucent drifting shell */}
+      <mesh ref={clouds} scale={1.03}>
+        <sphereGeometry args={[PLANET_R, 64, 64]} />
+        <meshPhysicalMaterial
+          color={SILVER}
+          metalness={0}
+          roughness={0.9}
+          transparent
+          opacity={0.12}
+          depthWrite={false}
         />
       </mesh>
     </group>
@@ -185,61 +192,197 @@ function CoreCube({ reveal }: { reveal: Reveal }) {
 }
 
 /* ------------------------------------------------------------------ *
- * Layer 3 — CIRCUIT SHELL (three PCB layers on X / Y / Z)
+ * 2 — ATMOSPHERE GLOW (back-side fresnel halo around the globe)
  * ------------------------------------------------------------------ */
 
-/** A closed polygon path turned into a tube — reads as a PCB trace. */
-function pcbCurve(sides: number, radius: number, wobble = 0) {
-  const pts: Vector3[] = [];
-  for (let i = 0; i <= sides; i++) {
-    const a = (i / sides) * Math.PI * 2;
-    const r = radius + Math.sin(a * 3) * wobble;
-    pts.push(new Vector3(Math.cos(a) * r, Math.sin(a) * r, 0));
+const ATMO_VERT = /* glsl */ `
+  varying vec3 vN;
+  varying vec3 vP;
+  void main() {
+    vN = normalize(mat3(modelMatrix) * normal);
+    vP = (modelMatrix * vec4(position, 1.0)).xyz;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
-  return new CatmullRomCurve3(pts, true);
-}
+`;
 
-function CircuitRing({
-  sides,
-  radius,
-  thickness,
-  rotation,
-  speed,
-  color,
-  delay,
-  reveal,
-}: {
-  sides: number;
-  radius: number;
-  thickness: number;
-  rotation: [number, number, number];
-  speed: number;
-  color: string;
-  delay: number;
-  reveal: (d: number) => number;
-}) {
-  const ref = useRef<Mesh>(null);
-  const curve = useMemo(
-    () => pcbCurve(sides, radius, radius * 0.06),
-    [sides, radius],
-  );
-  useFrame((_, delta) => {
-    if (!ref.current) return;
-    ref.current.rotation.z += delta * speed;
-    const s = reveal(delay);
-    ref.current.scale.setScalar(0.6 + s * 0.4);
-    const m = ref.current.material as unknown as { emissiveIntensity: number };
-    m.emissiveIntensity = 0.2 + s * 0.6;
+const ATMO_FRAG = /* glsl */ `
+  uniform vec3 uGlow;
+  varying vec3 vN;
+  varying vec3 vP;
+  void main(){
+    float fres = pow(0.72 - dot(vN, vec3(0.0, 0.0, 1.0)), 3.0);
+    fres = clamp(fres, 0.0, 1.0);
+    gl_FragColor = vec4(uGlow, fres);
+  }
+`;
+
+function Atmosphere({ reveal }: { reveal: (d: number, s?: number) => number }) {
+  const mat = useRef<ShaderMaterial>(null);
+  const uniforms = useMemo(() => ({ uGlow: { value: new Color(ARC) } }), []);
+  useFrame((state) => {
+    if (mat.current) {
+      const pulse = 0.55 + Math.sin(state.clock.elapsedTime * 0.6) * 0.12;
+      mat.current.opacity = pulse * reveal(0.3);
+    }
   });
   return (
-    <mesh ref={ref} rotation={rotation} scale={0.6}>
-      <tubeGeometry args={[curve, 128, thickness, 8, true]} />
+    <mesh scale={1.16}>
+      <sphereGeometry args={[PLANET_R, 64, 64]} />
+      <shaderMaterial
+        ref={mat}
+        vertexShader={ATMO_VERT}
+        fragmentShader={ATMO_FRAG}
+        uniforms={uniforms}
+        transparent
+        blending={AdditiveBlending}
+        side={BackSide}
+        depthWrite={false}
+      />
+    </mesh>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 3 — ORBITAL RINGS (3 torus rings, distinct tilt + speed)
+ * ------------------------------------------------------------------ */
+
+type RingCfg = {
+  radius: number;
+  thickness: number;
+  tilt: [number, number, number];
+  speed: number;
+  color: string;
+  moons: number;
+};
+
+const RINGS: RingCfg[] = [
+  {
+    radius: 2.35,
+    thickness: 0.018,
+    tilt: [1.35, 0.1, 0.2],
+    speed: 0.16,
+    color: ARC,
+    moons: 4,
+  },
+  {
+    radius: 3.05,
+    thickness: 0.03,
+    tilt: [1.05, -0.35, 0.55],
+    speed: -0.11,
+    color: ARC_SOFT,
+    moons: 4,
+  },
+  {
+    radius: 3.85,
+    thickness: 0.045,
+    tilt: [0.72, 0.5, -0.35],
+    speed: 0.08,
+    color: SILVER,
+    moons: 4,
+  },
+];
+
+function OrbitalRing({
+  cfg,
+  reveal,
+  scroll,
+  ringIndex,
+}: {
+  cfg: RingCfg;
+  reveal: (d: number, s?: number) => number;
+  scroll: React.MutableRefObject<number>;
+  ringIndex: number;
+}) {
+  const group = useRef<Group>(null);
+
+  useFrame((state, delta) => {
+    if (!group.current) return;
+    const boost = 1 + scroll.current * 1.6; // scroll spins the rings up
+    group.current.rotation.z += delta * cfg.speed * boost;
+    const s = 0.6 + reveal(0.2 + ringIndex * 0.12) * 0.4;
+    group.current.scale.setScalar(s);
+  });
+
+  return (
+    <group ref={group} rotation={cfg.tilt}>
+      <mesh>
+        <torusGeometry args={[cfg.radius, cfg.thickness, 16, 220]} />
+        <meshStandardMaterial
+          color={cfg.color}
+          emissive={cfg.color}
+          emissiveIntensity={1.4}
+          metalness={0.9}
+          roughness={0.25}
+          toneMapped={false}
+        />
+      </mesh>
+      {/* A faint inner hairline to give the ring depth */}
+      <mesh>
+        <torusGeometry args={[cfg.radius, cfg.thickness * 2.6, 12, 180]} />
+        <meshBasicMaterial
+          color={cfg.color}
+          transparent
+          opacity={0.12}
+          blending={AdditiveBlending}
+          depthWrite={false}
+        />
+      </mesh>
+    </group>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 4 — MOONS (12 small spheres riding the rings, each pulsing)
+ * ------------------------------------------------------------------ */
+
+/** Copper for the middle ring's moons so the accent is used sparingly. */
+function moonColor(cfg: RingCfg) {
+  return cfg.color === ARC_SOFT ? COPPER : SILVER;
+}
+
+function Moon({
+  cfg,
+  seed,
+  reveal,
+}: {
+  cfg: RingCfg;
+  seed: number;
+  reveal: (d: number, s?: number) => number;
+}) {
+  const mesh = useRef<Mesh>(null);
+
+  const data = useMemo(() => {
+    const rr = mulberry32(seed * 7 + 13);
+    return {
+      phase: rr() * Math.PI * 2,
+      speed: cfg.speed * 2.4 + (rr() - 0.5) * 0.1,
+      size: 0.07 + rr() * 0.06,
+      wobble: 0.02 + rr() * 0.04,
+    };
+  }, [seed, cfg.speed]);
+
+  useFrame((state) => {
+    if (!mesh.current) return;
+    const t = state.clock.elapsedTime * data.speed + data.phase;
+    const wob = Math.sin(state.clock.elapsedTime * 0.9 + seed) * data.wobble;
+    mesh.current.position.set(
+      Math.cos(t) * (cfg.radius + wob),
+      wob,
+      Math.sin(t) * (cfg.radius + wob),
+    );
+    const pulse = 1 + Math.sin(state.clock.elapsedTime * 2.2 + seed) * 0.18;
+    mesh.current.scale.setScalar(data.size * pulse * reveal(0.4));
+  });
+
+  return (
+    <mesh ref={mesh}>
+      <sphereGeometry args={[1, 16, 16]} />
       <meshStandardMaterial
-        color={PALETTE.violet.dark}
-        metalness={0.95}
-        roughness={0.15}
-        emissive={color}
-        emissiveIntensity={0.2}
+        color={moonColor(cfg)}
+        emissive={moonColor(cfg)}
+        emissiveIntensity={1.1}
+        metalness={0.7}
+        roughness={0.35}
         toneMapped={false}
       />
     </mesh>
@@ -247,295 +390,135 @@ function CircuitRing({
 }
 
 /* ------------------------------------------------------------------ *
- * Layer 4 — DATA NODES (24 compute units on the rings)
+ * 5 — ASTEROID BELT (InstancedMesh, 200 rocks — drift + rotate)
  * ------------------------------------------------------------------ */
 
-function DataNodes({ reveal }: { reveal: Reveal }) {
-  const nodes = useMemo(() => {
-    const out: {
-      pos: [number, number, number];
-      axis: "x" | "y" | "z";
-      color: string;
-      delay: number;
-    }[] = [];
-    const colors = [PALETTE.violet.light, PALETTE.mint.base, PALETTE.rose.base];
-    const ringR = [1.9, 2.35, 2.8];
-    const axes: ("x" | "y" | "z")[] = ["z", "y", "x"];
-    let idx = 0;
-    ringR.forEach((r, ri) => {
-      const count = 8;
-      for (let i = 0; i < count; i++) {
-        const a = (i / count) * Math.PI * 2 + ri;
-        const axis = axes[ri];
-        /* place on the ring plane, then the group rotation orients it */
-        const pos: [number, number, number] =
-          axis === "z"
-            ? [Math.cos(a) * r, Math.sin(a) * r, 0]
-            : axis === "y"
-              ? [Math.cos(a) * r, 0, Math.sin(a) * r]
-              : [0, Math.cos(a) * r, Math.sin(a) * r];
-        out.push({
-          pos,
-          axis,
-          color: colors[idx % colors.length],
-          delay: 0.6 + idx * 0.03,
-        });
-        idx++;
-      }
-    });
-    return out;
-  }, []);
-
-  return (
-    <>
-      {nodes.map((n, i) => (
-        <DataNode key={i} {...n} reveal={reveal} />
-      ))}
-    </>
-  );
-}
-
-function DataNode({
-  pos,
-  axis,
-  color,
-  delay,
+function AsteroidBelt({
+  count = 200,
   reveal,
+  scroll,
 }: {
-  pos: [number, number, number];
-  axis: "x" | "y" | "z";
-  color: string;
-  delay: number;
-  reveal: Reveal;
+  count?: number;
+  reveal: (d: number, s?: number) => number;
+  scroll: React.MutableRefObject<number>;
 }) {
-  const ref = useRef<Group>(null);
-  const box = useRef<Mesh>(null);
-  const rotation: [number, number, number] =
-    axis === "x"
-      ? [Math.PI / 2, 0, 0]
-      : axis === "y"
-        ? [0, 0, Math.PI / 2]
-        : [0, 0, 0];
-  useFrame((state) => {
-    const t = state.clock.elapsedTime;
-    const s = reveal(delay);
-    if (ref.current) ref.current.scale.setScalar(s);
-    if (box.current) {
-      const m = box.current.material as unknown as {
-        emissiveIntensity: number;
-      };
-      /* staggered processing pulse */
-      m.emissiveIntensity = 0.4 + (Math.sin(t * 3 + delay * 6) + 1) * 1.3;
-    }
-  });
-  return (
-    <group rotation={rotation}>
-      <group ref={ref} position={pos} scale={0.001}>
-        <RoundedBox
-          args={[0.14, 0.14, 0.14]}
-          radius={0.03}
-          smoothness={4}
-          ref={box}
-        >
-          <meshStandardMaterial
-            color={PALETTE.violet.dark}
-            emissive={color}
-            emissiveIntensity={1}
-            metalness={0.9}
-            roughness={0.2}
-            toneMapped={false}
-          />
-        </RoundedBox>
-      </group>
-    </group>
-  );
-}
+  const inst = useRef<InstancedMesh>(null);
+  const dummy = useMemo(() => new Matrix4(), []);
+  const pos = useMemo(() => new Vector3(), []);
+  const quat = useMemo(() => new Quaternion(), []);
+  const scl = useMemo(() => new Vector3(), []);
+  const eul = useMemo(() => new Euler(), []);
 
-/* ------------------------------------------------------------------ *
- * Layer 5 — CONNECTION LINES (dashed data buses between nodes)
- * ------------------------------------------------------------------ */
-
-function ConnectionLines({ reveal }: { reveal: Reveal }) {
-  const lines = useMemo(() => {
-    const out: { pts: [number, number, number][]; delay: number }[] = [];
-    const nodes: Vector3[] = [];
-    const ringR = [1.9, 2.35, 2.8];
-    const axes: ("x" | "y" | "z")[] = ["z", "y", "x"];
-    ringR.forEach((r, ri) => {
-      for (let i = 0; i < 8; i++) {
-        const a = (i / 8) * Math.PI * 2 + ri;
-        const axis = axes[ri];
-        nodes.push(
-          axis === "z"
-            ? new Vector3(Math.cos(a) * r, Math.sin(a) * r, 0)
-            : axis === "y"
-              ? new Vector3(Math.cos(a) * r, 0, Math.sin(a) * r)
-              : new Vector3(0, Math.cos(a) * r, Math.sin(a) * r),
-        );
-      }
-    });
-    /* connect a subset (not all pairs — that would be a hairball) */
-    for (let i = 0; i < nodes.length; i++) {
-      const a = nodes[i];
-      const b = nodes[(i + 7) % nodes.length];
-      const mid = a.clone().add(b).multiplyScalar(0.5).multiplyScalar(0.75);
-      out.push({
-        pts: [
-          [a.x, a.y, a.z],
-          [mid.x, mid.y, mid.z],
-          [b.x, b.y, b.z],
-        ],
-        delay: 0.9 + i * 0.02,
-      });
-    }
-    return out;
-  }, []);
-
-  return (
-    <>
-      {lines.map((l, i) => (
-        <ConnectionLine key={i} line={l} reveal={reveal} index={i} />
-      ))}
-    </>
-  );
-}
-
-function ConnectionLine({
-  line,
-  reveal,
-  index,
-}: {
-  line: { pts: [number, number, number][]; delay: number };
-  reveal: (d: number) => number;
-  index: number;
-}) {
-  const ref = useRef<{ material: { dashOffset: number } } | null>(null);
-  useFrame((state) => {
-    const s = reveal(line.delay);
-    if (ref.current) {
-      ref.current.material.dashOffset = -state.clock.elapsedTime * 0.5 - index;
-      /* fade in as the reveal progresses */
-      (ref.current.material as unknown as { opacity: number }).opacity =
-        s * 0.4;
-    }
-  });
-  return (
-    <Line
-      ref={ref as never}
-      points={line.pts}
-      color={PALETTE.mint.base}
-      lineWidth={1}
-      dashed
-      dashScale={4}
-      transparent
-      opacity={0}
-    />
-  );
-}
-
-/* ------------------------------------------------------------------ *
- * Layer 6 — PACKETS (data flowing along the buses)
- * ------------------------------------------------------------------ */
-
-function Packets({ count = 60, reveal }: { count?: number; reveal: Reveal }) {
-  const refs = useRef<(Mesh | null)[]>([]);
-  const routes = useMemo(() => {
-    const out: {
-      pts: [number, number, number][];
-      speed: number;
-      offset: number;
-    }[] = [];
-    const nodes: Vector3[] = [];
-    const ringR = [1.9, 2.35, 2.8];
-    const axes: ("x" | "y" | "z")[] = ["z", "y", "x"];
-    ringR.forEach((r, ri) => {
-      for (let i = 0; i < 8; i++) {
-        const a = (i / 8) * Math.PI * 2 + ri;
-        const axis = axes[ri];
-        nodes.push(
-          axis === "z"
-            ? new Vector3(Math.cos(a) * r, Math.sin(a) * r, 0)
-            : axis === "y"
-              ? new Vector3(Math.cos(a) * r, 0, Math.sin(a) * r)
-              : new Vector3(0, Math.cos(a) * r, Math.sin(a) * r),
-        );
-      }
-    });
-    for (let i = 0; i < count; i++) {
-      const a = nodes[i % nodes.length];
-      const b = nodes[(i + 7) % nodes.length];
-      const mid = a.clone().add(b).multiplyScalar(0.5).multiplyScalar(0.75);
-      out.push({
-        pts: [
-          [a.x, a.y, a.z],
-          [mid.x, mid.y, mid.z],
-          [b.x, b.y, b.z],
-        ],
-        speed: 0.25 + ((i * 0.137) % 1) * 0.5,
-        offset: (i * 0.618) % 1,
-      });
-    }
-    return out;
+  const rocks = useMemo(() => {
+    const rng = mulberry32(99);
+    return Array.from({ length: count }).map(() => ({
+      radius: 4.6 + rng() * 1.6,
+      theta: rng() * Math.PI * 2,
+      y: (rng() - 0.5) * 0.5,
+      speed: (0.04 + rng() * 0.1) * (rng() > 0.5 ? 1 : -1),
+      size: 0.02 + rng() * 0.06,
+      spin: (rng() - 0.5) * 2,
+    }));
   }, [count]);
 
-  const tmp = useMemo(() => new Vector3(), []);
-
-  useFrame((state) => {
-    const s = reveal(1.1);
-    routes.forEach((r, i) => {
-      const m = refs.current[i];
-      if (!m) return;
-      const t = (state.clock.elapsedTime * r.speed + r.offset) % 1;
-      const idx = t * (r.pts.length - 1);
-      const k = Math.floor(idx);
-      const f = idx - k;
-      const p0 = r.pts[Math.min(k, r.pts.length - 2)];
-      const p1 = r.pts[Math.min(k + 1, r.pts.length - 1)];
-      if (!p0 || !p1) return;
-      tmp.set(
-        p0[0] + (p1[0] - p0[0]) * f,
-        p0[1] + (p1[1] - p0[1]) * f,
-        p0[2] + (p1[2] - p0[2]) * f,
-      );
-      m.position.copy(tmp);
-      const mat = m.material as unknown as { opacity: number };
-      mat.opacity = s * Math.sin(t * Math.PI);
-    });
+  useFrame((state, delta) => {
+    if (!inst.current) return;
+    const t = state.clock.elapsedTime;
+    const boost = 1 + scroll.current * 1.4;
+    for (let i = 0; i < rocks.length; i++) {
+      const r = rocks[i];
+      const ang = r.theta + t * r.speed * boost;
+      pos.set(Math.cos(ang) * r.radius, r.y, Math.sin(ang) * r.radius);
+      eul.set(ang * r.spin, ang, r.spin);
+      quat.setFromEuler(eul);
+      scl.setScalar(r.size * reveal(0.5));
+      dummy.compose(pos, quat, scl);
+      inst.current.setMatrixAt(i, dummy);
+    }
+    inst.current.instanceMatrix.needsUpdate = true;
+    inst.current.rotation.y += delta * 0.01;
   });
 
   return (
-    <>
-      {routes.map((_, i) => (
-        <mesh
-          key={i}
-          ref={(m) => {
-            refs.current[i] = m;
-          }}
-        >
-          <boxGeometry args={[0.035, 0.035, 0.035]} />
-          <meshBasicMaterial
-            color={PALETTE.mint.light}
-            transparent
-            opacity={0}
-            toneMapped={false}
-          />
-        </mesh>
-      ))}
-    </>
+    <instancedMesh ref={inst} args={[undefined, undefined, count]}>
+      <dodecahedronGeometry args={[1, 0]} />
+      <meshStandardMaterial
+        color={COLORS.panel}
+        metalness={0.6}
+        roughness={0.7}
+      />
+    </instancedMesh>
   );
 }
 
 /* ------------------------------------------------------------------ *
- * POST-PROCESSING (light — beauty lives in the materials)
+ * 6 — STARFIELD (500 in-scene points, twinkling)
+ * ------------------------------------------------------------------ */
+
+function StarLayer({
+  count = 500,
+  reveal,
+}: {
+  count?: number;
+  reveal: (d: number, s?: number) => number;
+}) {
+  const pts = useRef<Points>(null);
+  const positions = useMemo(() => {
+    const rng = mulberry32(21);
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const r = 7 + rng() * 12;
+      const theta = rng() * Math.PI * 2;
+      const phi = Math.acos(2 * rng() - 1);
+      arr[i * 3] = Math.sin(phi) * Math.cos(theta) * r;
+      arr[i * 3 + 1] = Math.cos(phi) * r;
+      arr[i * 3 + 2] = Math.sin(phi) * Math.sin(theta) * r;
+    }
+    return arr;
+  }, [count]);
+
+  useFrame((state) => {
+    if (!pts.current) return;
+    pts.current.rotation.y += 0.0004;
+    const mat = pts.current.material as unknown as { opacity: number };
+    mat.opacity =
+      reveal(0.6) * (0.55 + Math.sin(state.clock.elapsedTime * 0.8) * 0.15);
+  });
+
+  return (
+    <points ref={pts}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+          count={count}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.045}
+        color={SILVER}
+        transparent
+        opacity={0}
+        sizeAttenuation
+        depthWrite={false}
+        blending={AdditiveBlending}
+      />
+    </points>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * Post-processing + clock
  * ------------------------------------------------------------------ */
 
 function Effects() {
-  const caOffset = useMemo(() => new Vector2(0.0008, 0.0008), []);
+  const caOffset = useMemo(() => new Vector2(0.001, 0.001), []);
   return (
-    <EffectComposer multisampling={4}>
+    <EffectComposer multisampling={0}>
       <Bloom
-        intensity={0.8}
-        luminanceThreshold={0.25}
+        intensity={1.2}
+        luminanceThreshold={0.22}
         luminanceSmoothing={0.5}
         mipmapBlur
       />
@@ -544,9 +527,16 @@ function Effects() {
         radialModulation
         modulationOffset={0.4}
       />
-      <Vignette offset={0.3} darkness={0.6} />
+      <Vignette offset={0.3} darkness={0.68} />
     </EffectComposer>
   );
+}
+
+function SceneClock({ elapsed }: { elapsed: React.MutableRefObject<number> }) {
+  useFrame((_, delta) => {
+    elapsed.current += delta;
+  });
+  return null;
 }
 
 /* ------------------------------------------------------------------ *
@@ -554,123 +544,106 @@ function Effects() {
  * ------------------------------------------------------------------ */
 
 export default function HeroCore({ className }: { className?: string }) {
-  /* A single shared clock drives every staged reveal. */
   const elapsed = useRef(0);
-  useFrame((_, delta) => {
-    elapsed.current += delta;
-  });
+  const scroll = useRef(0);
   const reveal = (delay: number, duration = 1) =>
     EASINGS.outExpo(
       Math.min(1, Math.max(0, (elapsed.current - delay) / duration)),
     );
 
+  /* 12 moons distributed across the 3 rings (4 each). */
+  const moons = useMemo(
+    () =>
+      RINGS.flatMap((cfg, ri) =>
+        Array.from({ length: cfg.moons }).map((_, mi) => ({
+          cfg,
+          seed: ri * 10 + mi + 1,
+        })),
+      ),
+    [],
+  );
+
   return (
     <Scene3D
       className={className}
-      camera={{ position: [0, 0, 6], fov: 42 }}
+      camera={{ position: [0, 1.4, 9] }}
       lights={false}
       tier="hero"
       composer={<Effects />}
       mouseParallax
+      scrollCamera
+      scrollProgress={scroll}
     >
-      {/* ── Cinematic light rig (key / fill / rim / back / top / accent) ── */}
-      <ambientLight intensity={0.2} />
-      <directionalLight position={[5, 8, 5]} intensity={3} color="#ffffff" />
-      <directionalLight
-        position={[-5, -3, 4]}
-        intensity={1.5}
-        color={PALETTE.violet.light}
-      />
-      <pointLight
-        position={[0, 0, -8]}
-        intensity={3}
-        color={PALETTE.mint.base}
-      />
-      <pointLight
-        position={[8, 3, -5]}
-        intensity={2}
-        color={PALETTE.rose.base}
-      />
+      <SceneClock elapsed={elapsed} />
+
+      {/* ── 6-source light rig: key sun + rim + fill + atmosphere ── */}
+      <ambientLight intensity={0.18} />
+      {/* key sun */}
+      <directionalLight position={[8, 10, 6]} intensity={3.2} color="#FFFFFF" />
+      {/* rim */}
+      <directionalLight position={[-7, -4, 5]} intensity={1.8} color={ARC} />
+      {/* fill */}
+      <pointLight position={[5, 4, -5]} intensity={2.2} color={SILVER} />
+      {/* atmosphere under-glow */}
+      <pointLight position={[0, -4, 2]} intensity={2} color={ARC} />
+      {/* backlight */}
+      <pointLight position={[0, 0, -8]} intensity={3.4} color={ARC_SOFT} />
+      {/* warm copper accent (used sparingly) */}
       <spotLight
-        position={[0, 10, 0]}
-        angle={0.5}
+        position={[-4, 6, 3]}
+        angle={0.6}
         penumbra={1}
-        intensity={4}
-        color="#ffffff"
-      />
-      <pointLight
-        position={[-6, -4, -3]}
-        intensity={1.5}
-        color={PALETTE.violet.base}
+        intensity={2.6}
+        color={COPPER}
       />
 
-      {/* ── Four-lightformer internal HDRI ── */}
-      <Environment resolution={512}>
+      {/* ── Internal HDRI (Lightformer) ── */}
+      <Environment resolution={256}>
         <Lightformer
           intensity={2}
-          color="#ffffff"
+          color="#FFFFFF"
           position={[0, 6, -9]}
           scale={[12, 12, 1]}
         />
         <Lightformer
-          intensity={2}
-          color={PALETTE.violet.base}
+          intensity={1.6}
+          color={ARC}
           position={[7, 0, -6]}
           scale={[10, 10, 1]}
         />
         <Lightformer
-          intensity={2}
-          color={PALETTE.mint.base}
+          intensity={1.6}
+          color={SILVER}
           position={[-7, 0, -6]}
-          scale={[10, 10, 1]}
-        />
-        <Lightformer
-          intensity={1.5}
-          color={PALETTE.rose.base}
-          position={[0, -6, -6]}
           scale={[10, 10, 1]}
         />
       </Environment>
 
-      <Backdrop />
+      {/* ── The planet + its atmosphere ── */}
+      <Planet reveal={reveal} />
+      <Atmosphere reveal={reveal} />
 
-      {/* Circuit shell — three PCB layers on three axes */}
-      <CircuitRing
-        sides={6}
-        radius={1.9}
-        thickness={0.02}
-        rotation={[0, 0, 0]}
-        speed={MOTION.slow}
-        color={PALETTE.mint.base}
-        delay={0.5}
-        reveal={reveal}
-      />
-      <CircuitRing
-        sides={8}
-        radius={2.35}
-        thickness={0.035}
-        rotation={[Math.PI / 2, 0, 0]}
-        speed={-MOTION.slow * 1.6}
-        color={PALETTE.violet.light}
-        delay={0.7}
-        reveal={reveal}
-      />
-      <CircuitRing
-        sides={10}
-        radius={2.8}
-        thickness={0.05}
-        rotation={[0, Math.PI / 2, 0]}
-        speed={MOTION.slow * 1.2}
-        color={PALETTE.rose.base}
-        delay={0.9}
-        reveal={reveal}
-      />
+      {/* ── Orbital rings ── */}
+      {RINGS.map((cfg, i) => (
+        <OrbitalRing
+          key={i}
+          cfg={cfg}
+          reveal={reveal}
+          scroll={scroll}
+          ringIndex={i}
+        />
+      ))}
 
-      {/* Core + nodes + buses + traffic */}
-      <CoreCube reveal={reveal} />
-      <DataNodes reveal={reveal} />
-      <ConnectionLines reveal={reveal} />
-      <Packets count={60} reveal={reveal} />
+      {/* ── Moons riding the rings ── */}
+      {moons.map((m, i) => (
+        <Moon key={i} cfg={m.cfg} seed={m.seed} reveal={reveal} />
+      ))}
+
+      {/* ── Asteroid belt ── */}
+      <AsteroidBelt count={200} reveal={reveal} scroll={scroll} />
+
+      {/* ── In-scene stars ── */}
+      <StarLayer count={500} reveal={reveal} />
     </Scene3D>
   );
 }

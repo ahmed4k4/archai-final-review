@@ -4,6 +4,7 @@ import Slider from "@/components/Slider";
 import Explorer from "@/components/Explorer";
 import CategoryCards from "@/components/CategoryCards";
 import Backdrop from "@/components/visuals/Backdrop";
+import SectionScene from "@/components/visuals/SectionScene";
 import { getHome } from "@/lib/data";
 import { LOCALES, pick, tr } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/supabase";
@@ -111,6 +112,11 @@ export default async function CategoryPage({
         <span>›</span>
         <span className="text-ink-2">{name}</span>
       </nav>
+
+      {/* 3D category grid */}
+      <div className="section-scene mb-12 rounded-3xl overflow-hidden">
+        <SectionScene name="CategoryGridScene" className="h-full w-full" tint="#2ED2FF" />
+      </div>
 
       {/* Hero header */}
       <header className="relative mb-12 p-8 lg:p-12 rounded-4xl glass overflow-hidden">

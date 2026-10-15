@@ -11,7 +11,7 @@ type Particle = {
   color: string;
 };
 
-const PALETTE = ["#cbfffc", "#4ce2d0", "#129a8c", "#7c5cff", "#ad97ff", "#fde9ff"];
+const PALETTE = ["#E6FAFF", "#2ED2FF", "#0E90B8", "#CCD3DA", "#8AE8FF", "#C48A5C"];
 
 export default function HeroParticles() {
   useEffect(() => {
@@ -92,7 +92,7 @@ export default function HeroParticles() {
           const d = Math.hypot(dx, dy);
           if (d < R * 0.2) {
             context.beginPath();
-            context.strokeStyle = `rgba(124,92,255,${
+            context.strokeStyle = `rgba(46,210,255,${
               (1 - d / (R * 0.2)) * 0.14 * a.alpha
             })`;
             context.lineWidth = 0.5;

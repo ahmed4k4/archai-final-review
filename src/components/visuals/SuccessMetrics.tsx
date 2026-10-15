@@ -3,8 +3,9 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import type { Mesh, Group } from "three";
+import { RoundedBox } from "@react-three/drei";
 import Scene3D from "./Scene3D";
-import { PALETTE } from "./scene-utils";
+import { COLORS as PALETTE } from "./scene-system";
 
 /** 8 metric columns that rise and fall like a live dashboard. */
 const BARS = 8;
@@ -36,16 +37,21 @@ function Bar({ index, x }: { index: number; x: number }) {
   });
   return (
     <Float speed={0.8} rotationIntensity={0.05} floatIntensity={0.2}>
-      <mesh ref={ref} position={[x, -0.5, 0]}>
-        <boxGeometry args={[0.42, 1, 0.42]} />
+      <RoundedBox
+        ref={ref}
+        args={[0.42, 1, 0.42]}
+        radius={0.09}
+        smoothness={5}
+        position={[x, -0.5, 0]}
+      >
         <meshStandardMaterial
-          color={COLORS[index]}
+          color={PALETTE.ink}
           emissive={COLORS[index]}
           emissiveIntensity={0.6}
-          metalness={0.75}
-          roughness={0.2}
+          metalness={0.85}
+          roughness={0.18}
         />
-      </mesh>
+      </RoundedBox>
     </Float>
   );
 }
@@ -96,8 +102,15 @@ export default function SuccessMetrics({ className }: { className?: string }) {
     <Scene3D
       className={className}
       camera={{ position: [0, 0.6, 7], fov: 46 }}
+      lights={false}
       mouseParallax={false}
     >
+      {/* Cinematic rig — key / fill / rim / accent */}
+      <ambientLight intensity={0.35} />
+      <directionalLight position={[4, 6, 5]} intensity={2.2} color="#ffffff" />
+      <directionalLight position={[-4, 2, 3]} intensity={0.9} color={PALETTE.violetSoft} />
+      <pointLight position={[0, 3, -5]} intensity={2.4} color={PALETTE.mint} />
+      <pointLight position={[5, -2, 2]} intensity={1.2} color={PALETTE.rose} />
       <GroundGrid />
       {xs.map((x, i) => (
         <Bar key={`b${i}`} index={i} x={x} />

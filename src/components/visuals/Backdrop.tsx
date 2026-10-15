@@ -1,44 +1,45 @@
-"use client";
-import dynamic from "next/dynamic";
 import type { PageKey } from "./PageScenes";
 
 /**
- * Backdrop — the public entry for page backgrounds.
+ * Backdrop — pure CSS, no WebGL.
  *
- * Each page gets a *symbolic* WebGL scene that reflects its content
- * (services → service constellation, careers → orbital team, …).
- * three.js is fetched client-only so it never blocks first paint.
+ * Keeping page backgrounds as CSS removes a second/third WebGL context per
+ * page (the hero scene is the page's only canvas), so pages stay at a stable
+ * 60 fps even on mid-range devices. Each page key still gets a distinct
+ * colour signature via the injected custom properties, and the motion is
+ * disabled automatically under prefers-reduced-motion by the global reset.
  */
-const SceneBackdrop = dynamic(() => import("./backdrops/BackdropWrapper"), {
-  ssr: false,
-  loading: () => null,
-});
 
-const load = (name: string) =>
-  dynamic(() => import("./backdrops/scenes").then((m) => ({ default: (m as never)[name] })), {
-    ssr: false,
-  });
-
-const SCENES = {
-  home: load("HomeScene"),
-  services: load("ServicesScene"),
-  industries: load("IndustriesScene"),
-  about: load("AboutScene"),
-  process: load("ProcessScene"),
-  insights: load("InsightsScene"),
-  contact: load("ContactScene"),
-  "case-studies": load("CaseStudiesScene"),
-  careers: load("CareersScene"),
-  faq: load("FaqScene"),
-  project: load("ProjectScene"),
-  category: load("CategoryScene"),
-} as Record<PageKey, ReturnType<typeof load>>;
+const ACCENTS: Record<PageKey, [string, string]> = {
+  home: ["#2ED2FF", "#CCD3DA"],
+  services: ["#2ED2FF", "#8AE8FF"],
+  industries: ["#2ED2FF", "#C48A5C"],
+  about: ["#CCD3DA", "#2ED2FF"],
+  process: ["#2ED2FF", "#5CDDFF"],
+  insights: ["#C48A5C", "#2ED2FF"],
+  contact: ["#2ED2FF", "#C48A5C"],
+  "case-studies": ["#2ED2FF", "#CCD3DA"],
+  careers: ["#CCD3DA", "#2ED2FF"],
+  faq: ["#2ED2FF", "#8AE8FF"],
+  portfolio: ["#2ED2FF", "#CCD3DA"],
+  project: ["#2ED2FF", "#CCD3DA"],
+  category: ["#2ED2FF", "#C48A5C"],
+};
 
 export default function Backdrop({ name }: { name: PageKey }) {
-  const Scene = SCENES[name] ?? SCENES.home;
+  const [a, b] = ACCENTS[name] ?? ACCENTS.home;
   return (
-    <SceneBackdrop>
-      <Scene />
-    </SceneBackdrop>
+    <div
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden opacity-60"
+      aria-hidden
+      style={{ ["--bd-a" as string]: a, ["--bd-b" as string]: b }}
+    >
+      <div className="bd-orb bd-orb-a" />
+      <div className="bd-orb bd-orb-b" />
+      <div className="bd-grid" />
+      {/* Per-page signature motion layer (orbit / radar / helix / wave /
+          twinkle / rings) — each page key renders a distinct backdrop. */}
+      <div className={`bd-sig bd-sig-${name}`} />
+    </div>
   );
 }

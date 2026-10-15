@@ -12,6 +12,7 @@ export type PageKey =
   | "case-studies"
   | "careers"
   | "faq"
+  | "portfolio"
   | "project"
   | "category";
 
@@ -31,6 +32,7 @@ export const PAGE_SCENES: Record<PageKey, VisualName> = {
   "case-studies": "SuccessMetrics",
   careers: "TeamOrbit",
   faq: "QABubbles",
+  portfolio: "ServiceConstellation",
   project: "KnowledgeFragments",
   category: "ServiceConstellation",
 };
@@ -50,6 +52,7 @@ export const PAGE_STRIP: Record<PageKey, [VisualName, VisualName]> = {
   "case-studies": ["SuccessMetrics", "WorkflowGraph"],
   careers: ["TeamOrbit", "DNAHelix"],
   faq: ["QABubbles", "SignalBeacon"],
+  portfolio: ["SuccessMetrics", "ServiceConstellation"],
   project: ["SuccessMetrics", "IndustryRings"],
   category: ["ServiceConstellation", "WorkflowGraph"],
 };

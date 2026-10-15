@@ -1,13 +1,12 @@
+/* Barrel — only components that are actually imported somewhere.
+ * Dead exports (TiltCard, MarqueeStrip, MorphingText, ParallaxLayer,
+ * TextReveal, PageTransition) were removed in the Phase-2 cleanup. */
 export { default as Reveal } from "./Reveal";
 export { default as Stagger } from "./Stagger";
 export { default as StaggerItem } from "./StaggerItem";
 export { default as MagneticButton } from "./MagneticButton";
-export { default as TiltCard } from "./TiltCard";
 export { default as ScrollProgress } from "./ScrollProgress";
 export { default as AnimatedNumber } from "./AnimatedNumber";
-export { default as PageTransition } from "./PageTransition";
 export { default as CursorGlow } from "./CursorGlow";
-export { default as TextReveal } from "./TextReveal";
-export { default as ParallaxLayer } from "./ParallaxLayer";
-export { default as MarqueeStrip } from "./MarqueeStrip";
-export { default as MorphingText } from "./MorphingText";
+export { default as SmoothScroll } from "./SmoothScroll";
+export { ScrollRevealText, Parallax } from "./ScrollReveal";

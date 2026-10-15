@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import type { Mesh, Group } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE } from "./scene-utils";
+import { COLORS as PALETTE } from "./scene-system";
 
 /** The company as a core; teammates orbit it, some carrying a "skill" moon. */
 const CREW = [

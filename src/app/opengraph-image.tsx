@@ -17,7 +17,7 @@ export default function OpenGraphImage() {
           justifyContent: "space-between",
           padding: "72px",
           color: "#ffffff",
-          background: "linear-gradient(135deg, #030510 0%, #2c1679 45%, #084945 100%)",
+          background: "linear-gradient(135deg, #0E1317 0%, #2c1679 45%, #084F67 100%)",
           position: "relative",
           overflow: "hidden",
           fontFamily: "Arial, sans-serif",
@@ -32,9 +32,9 @@ export default function OpenGraphImage() {
             right: "-180px",
             top: "-240px",
             borderRadius: "50%",
-            border: "2px solid rgba(124,92,255,.5)",
+            border: "2px solid rgba(46,210,255,.5)",
             boxShadow:
-              "0 0 0 60px rgba(124,92,255,.08), 0 0 0 140px rgba(76,226,208,.05)",
+              "0 0 0 60px rgba(46,210,255,.08), 0 0 0 140px rgba(46,210,255,.05)",
           }}
         />
         <div
@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
             bottom: "-240px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(76,226,208,.35), transparent 65%)",
+              "radial-gradient(circle, rgba(46,210,255,.35), transparent 65%)",
             filter: "blur(20px)",
           }}
         />
@@ -73,7 +73,7 @@ export default function OpenGraphImage() {
               color: "white",
               fontSize: 32,
               fontWeight: 700,
-              background: "linear-gradient(135deg, #7c5cff, #4ce2d0)",
+              background: "linear-gradient(135deg, #2ED2FF, #2ED2FF)",
             }}
           >
             A
@@ -104,7 +104,7 @@ export default function OpenGraphImage() {
             style={{
               fontSize: 34,
               background:
-                "linear-gradient(100deg, #ad97ff 0%, #4ce2d0 100%)",
+                "linear-gradient(100deg, #8AE8FF 0%, #2ED2FF 100%)",
               backgroundClip: "text",
               color: "transparent",
               fontWeight: 600,
@@ -115,7 +115,7 @@ export default function OpenGraphImage() {
           <div
             style={{
               fontSize: 24,
-              color: "#c5cbe0",
+              color: "#CCD3DA",
               lineHeight: 1.5,
               maxWidth: 800,
             }}
@@ -132,7 +132,7 @@ export default function OpenGraphImage() {
             gap: 14,
             fontSize: 18,
             letterSpacing: 3,
-            color: "#ad97ff",
+            color: "#8AE8FF",
           }}
         >
           <div
@@ -140,8 +140,8 @@ export default function OpenGraphImage() {
               width: 10,
               height: 10,
               borderRadius: 10,
-              background: "#4ce2d0",
-              boxShadow: "0 0 20px #4ce2d0",
+              background: "#2ED2FF",
+              boxShadow: "0 0 20px #2ED2FF",
             }}
           />
           DIGITAL PRODUCT ENGINEERING

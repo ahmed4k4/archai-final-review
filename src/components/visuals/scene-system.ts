@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { damp3, damp } from "maath/easing";
+import * as THREE from "three";
 import { Vector3 } from "three";
 import type { Group, Object3D } from "three";
 
@@ -8,46 +9,111 @@ import type { Group, Object3D } from "three";
  * PALETTE — one source of truth for every scene.
  * Each hue carries base / light / dark / emissive so materials never
  * have to hard-code a hex again.
+ *
+ * Brand palette only: Carbon · Panel · Silver · Arc Blue · Copper.
  * ================================================================== */
 
 export const PALETTE = {
+  arc: {
+    base: "#2ED2FF",
+    light: "#8AE8FF",
+    dark: "#0E90B8",
+    emissive: "#2ED2FF",
+  },
+  silver: {
+    base: "#CCD3DA",
+    light: "#F6F8FA",
+    dark: "#78848F",
+    emissive: "#B4BEC7",
+  },
+  copper: {
+    base: "#C48A5C",
+    light: "#E4C1A2",
+    dark: "#8E5A36",
+    emissive: "#C48A5C",
+  },
+  carbon: {
+    base: "#1B2228",
+    light: "#2A333B",
+    dark: "#141A1F",
+    emissive: "#38424B",
+  },
+  ink: { base: "#F6F8FA", muted: "#CCD3DA", dim: "#78848F" },
+
+  /* ---- Legacy aliases --------------------------------------------
+     Some scenes reference PALETTE.violet / .mint / .gold. Kept as
+     aliases so those files compile, but they resolve to the OFFICIAL
+     brand palette. */
   violet: {
-    base: "#7c5cff",
-    light: "#ad97ff",
-    dark: "#4022a8",
-    emissive: "#9275ff",
+    base: "#2ED2FF",
+    light: "#8AE8FF",
+    dark: "#0E90B8",
+    emissive: "#2ED2FF",
   },
   mint: {
-    base: "#4ce2d0",
-    light: "#5ff5e0",
-    dark: "#0d786f",
-    emissive: "#4ce2d0",
-  },
-  rose: {
-    base: "#ff6b9d",
-    light: "#ffb8cf",
-    dark: "#c92a5f",
-    emissive: "#ff6b9d",
+    base: "#2ED2FF",
+    light: "#8AE8FF",
+    dark: "#0E90B8",
+    emissive: "#2ED2FF",
   },
   gold: {
-    base: "#ffb829",
-    light: "#ffd479",
-    dark: "#b47b00",
-    emissive: "#ffb829",
+    base: "#C48A5C",
+    light: "#E4C1A2",
+    dark: "#8E5A36",
+    emissive: "#C48A5C",
   },
-  ink: { base: "#ffffff", muted: "#ad97ff", dim: "#8f96b8" },
+  rose: {
+    base: "#C48A5C",
+    light: "#E4C1A2",
+    dark: "#8E5A36",
+    emissive: "#C48A5C",
+  },
+} as const;
+
+/**
+ * Flat colour shortcuts — the single source of truth for scenes that want
+ * a plain hex string (e.g. `COLORS.arc`) instead of the nested tokens.
+ * Derived from PALETTE so both stay in sync forever.
+ */
+export const COLORS = {
+  arc: PALETTE.arc.base,
+  arcDeep: PALETTE.arc.dark,
+  arcSoft: PALETTE.arc.light,
+  silver: PALETTE.silver.base,
+  silverSoft: PALETTE.silver.light,
+  copper: PALETTE.copper.base,
+  copperSoft: PALETTE.copper.light,
+  carbon: PALETTE.carbon.base,
+  panel: PALETTE.carbon.light,
+  ink: "#141A1F",
+
+  /* ---- Legacy aliases --------------------------------------------
+     Older scenes reference violet/mint/gold/rose keys. They are kept
+     as aliases so those files keep compiling, but every value now
+     resolves to the OFFICIAL brand palette (no violet/mint/rose in
+     the actual output). */
+  violet: PALETTE.arc.base,
+  violetSoft: PALETTE.arc.light,
+  violetDeep: PALETTE.arc.dark,
+  mint: PALETTE.arc.base,
+  mintSoft: PALETTE.arc.light,
+  mintDeep: PALETTE.arc.dark,
+  gold: PALETTE.copper.base,
+  rose: PALETTE.copper.base,
+  white: PALETTE.silver.light,
 } as const;
 
 /** Flat hex shortcuts (still used by a few older helpers). */
 export const HEX = {
-  violet: PALETTE.violet.base,
-  violetLight: PALETTE.violet.light,
-  violetDark: PALETTE.violet.dark,
-  mint: PALETTE.mint.base,
-  mintLight: PALETTE.mint.light,
-  rose: PALETTE.rose.base,
-  gold: PALETTE.gold.base,
-  ink: "#0a0e1f",
+  arc: PALETTE.arc.base,
+  arcLight: PALETTE.arc.light,
+  arcDark: PALETTE.arc.dark,
+  silver: PALETTE.silver.base,
+  silverLight: PALETTE.silver.light,
+  copper: PALETTE.copper.base,
+  copperLight: PALETTE.copper.light,
+  carbon: PALETTE.carbon.base,
+  ink: "#141A1F",
 } as const;
 
 /* ================================================================== *
@@ -143,7 +209,7 @@ export function useReveal(
 
 export const MATERIAL = {
   /** Dark anodised metal — the "hardware" look. */
-  metalDark: { color: "#0a0e1f", metalness: 0.95, roughness: 0.15 },
+  metalDark: { color: "#141A1F", metalness: 0.95, roughness: 0.15 },
   /** Polished accent metal. */
   metalAccent: (hex: string) => ({
     color: hex,
@@ -157,6 +223,106 @@ export const MATERIAL = {
     emissiveIntensity: intensity,
     toneMapped: false,
   }),
+  /** Glass / transmission preset (use with <MeshTransmissionMaterial>). */
+  glass: {
+    transmission: 1,
+    thickness: 2.4,
+    roughness: 0.04,
+    ior: 1.5,
+    chromaticAberration: 0.5,
+    anisotropy: 0.35,
+    distortion: 0.25,
+    distortionScale: 0.2,
+    temporalDistortion: 0.08,
+    samples: 8,
+    resolution: 384,
+    backside: true,
+  } as const,
+  /** Soft plastic/ceramic shell for beveled product shapes. */
+  shell: (hex: string) => ({
+    color: hex,
+    metalness: 0.55,
+    roughness: 0.28,
+    clearcoat: 1,
+    clearcoatRoughness: 0.2,
+  }),
 } as const;
+
+/* ================================================================== *
+ * SCROLL_CONFIG — a shared vocabulary for scroll-driven scenes.
+ * Every page uses the same 0→1 progress contract so scenes stay
+ * consistent while their *behaviour* stays unique.
+ * ================================================================== */
+
+export const SCROLL_CONFIG = {
+  /** Multiplier applied to rotation speed as the section scrolls through. */
+  spinBoost: 2.4,
+  /** How far the camera dollies back at full scroll (world units). */
+  cameraDolly: 3.2,
+  /** Max extra spread applied to orbital rings. */
+  ringSpread: 0.55,
+  /** Max upward drift of background layers (parallax). */
+  parallax: { back: 0.15, mid: 0.4, content: 1, fore: 1.8 },
+  /** Reveal window used by section cards (fraction of viewport). */
+  reveal: { start: 0.92, end: 0.55 },
+} as const;
+
+/* ================================================================== *
+ * GEOMETRY / RANDOM HELPERS
+ * Unified here (was scene-utils.ts) so there is exactly one visual
+ * module: palettes, motion, easings, helpers.
+ * ================================================================== */
+
+/** Deterministic PRNG so scenes look identical on every render/hydration. */
+export function mulberry32(seed: number) {
+  let a = seed >>> 0;
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** Evenly distributed points on a sphere (fibonacci lattice). */
+export function spherePoints(
+  count: number,
+  radius: number,
+): [number, number, number][] {
+  const pts: [number, number, number][] = [];
+  const golden = Math.PI * (1 + Math.sqrt(5));
+  for (let i = 0; i < count; i++) {
+    const y = 1 - (i / (count - 1 || 1)) * 2;
+    const r = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = golden * i;
+    pts.push([
+      Math.cos(theta) * r * radius,
+      y * radius,
+      Math.sin(theta) * r * radius,
+    ]);
+  }
+  return pts;
+}
+
+/** A smooth curve through points — used for connecting lines between nodes. */
+export function curveBetween(a: THREE.Vector3, b: THREE.Vector3, bow = 0.35) {
+  const mid = a.clone().add(b).multiplyScalar(0.5);
+  mid.normalize().multiplyScalar(mid.length() * (1 + bow));
+  const curve = new THREE.QuadraticBezierCurve3(a, mid, b);
+  return curve.getPoints(40);
+}
+
+/** Sample a point along a bezier at t in [0,1]. */
+export function pointOnCurve(points: THREE.Vector3[], t: number) {
+  const clamped = Math.min(Math.max(t, 0), 1);
+  const idx = clamped * (points.length - 1);
+  const i = Math.floor(idx);
+  const f = idx - i;
+  const a = points[i];
+  const b = points[Math.min(i + 1, points.length - 1)];
+  if (!a || !b) return new THREE.Vector3();
+  return a.clone().lerp(b, f);
+}
 
 export type { Vector3, Group };

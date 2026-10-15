@@ -107,7 +107,7 @@ export const hoverScale = {
 };
 
 export const hoverGlow = {
-  whileHover: { boxShadow: "0 0 56px rgba(124,92,255,.55)", transition: T.fast },
+  whileHover: { boxShadow: "0 0 56px rgba(46,210,255,.55)", transition: T.fast },
 };
 
 /* ---------- Page transitions ---------- */

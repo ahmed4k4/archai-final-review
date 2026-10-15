@@ -28,7 +28,7 @@ export default async function OGImage({
           padding: "72px",
           color: "#ffffff",
           background:
-            "linear-gradient(135deg, #030510 0%, #2c1679 45%, #084945 100%)",
+            "linear-gradient(135deg, #0E1317 0%, #2c1679 45%, #084F67 100%)",
           position: "relative",
           overflow: "hidden",
           fontFamily: ar ? "Arial" : "Arial, sans-serif",
@@ -44,8 +44,8 @@ export default async function OGImage({
             left: ar ? "-160px" : "auto",
             top: "-220px",
             borderRadius: "50%",
-            border: "2px solid rgba(124,92,255,.5)",
-            boxShadow: "0 0 0 60px rgba(124,92,255,.08)",
+            border: "2px solid rgba(46,210,255,.5)",
+            boxShadow: "0 0 0 60px rgba(46,210,255,.08)",
           }}
         />
 
@@ -70,7 +70,7 @@ export default async function OGImage({
               color: "white",
               fontSize: 30,
               fontWeight: 700,
-              background: "linear-gradient(135deg, #7c5cff, #4ce2d0)",
+              background: "linear-gradient(135deg, #2ED2FF, #2ED2FF)",
             }}
           >
             A
@@ -99,7 +99,7 @@ export default async function OGImage({
           <div
             style={{
               fontSize: 30,
-              color: "#ad97ff",
+              color: "#8AE8FF",
               fontWeight: 600,
             }}
           >
@@ -114,7 +114,7 @@ export default async function OGImage({
             gap: 14,
             fontSize: 18,
             letterSpacing: 3,
-            color: "#4ce2d0",
+            color: "#2ED2FF",
           }}
         >
           <div
@@ -122,8 +122,8 @@ export default async function OGImage({
               width: 10,
               height: 10,
               borderRadius: 10,
-              background: "#4ce2d0",
-              boxShadow: "0 0 20px #4ce2d0",
+              background: "#2ED2FF",
+              boxShadow: "0 0 20px #2ED2FF",
             }}
           />
           {ar ? "الأنظمة المتكاملة" : "INTEGRATED SYSTEMS"}

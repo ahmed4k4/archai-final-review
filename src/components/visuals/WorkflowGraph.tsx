@@ -5,7 +5,7 @@ import { Line, Float } from "@react-three/drei";
 import * as THREE from "three";
 import type { Group, Mesh } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE } from "./scene-utils";
+import { COLORS as PALETTE } from "./scene-system";
 
 /** Six process stages in a ring, with a token hopping stage → stage. */
 const STAGES = 6;

@@ -6,9 +6,10 @@ import dynamic from "next/dynamic";
 import { tr, pick } from "@/lib/i18n";
 import type { Locale } from "@/lib/types";
 import { MagneticButton, AnimatedNumber } from "./motion";
-import { textReveal } from "@/lib/motion";
+import ViewportVisual from "./visuals/ViewportVisual";
+import { ShinyText, BlurText, StarBorder, CountUp } from "./reactbits";
+import ScrollRevealText from "./motion/ScrollRevealText";
 
-const DynamicVisual = dynamic(() => import("./visuals/DynamicVisual"), { ssr: false, loading: () => null });
 const HeroParticles = dynamic(() => import("./HeroParticles"), { ssr: false });
 
 type HeroProps = {
@@ -30,9 +31,16 @@ export default function Hero({ lang, settings, count }: HeroProps) {
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
 
-  const titleAr = settings.home_title_ar || tr("ar")("heroT");
-  const titleEn = settings.home_title_en || tr("en")("heroT");
-  const desc = pick(settings, "home_desc", lang) || T("heroDesc");
+  /* The KB message is the fixed brand headline; an admin-provided title
+   * (settings.home_title_*) is preserved as a supporting subline instead of
+   * replacing the core message. */
+  const titleAr = tr("ar")("heroT");
+  const titleEn = tr("en")("heroT");
+  const customTitle =
+    (lang === "ar" ? settings.home_title_ar : settings.home_title_en) || "";
+  const showCustom =
+    !!customTitle && customTitle !== titleAr && customTitle !== titleEn;
+  const desc = T("heroDesc");
 
   return (
     <section
@@ -55,19 +63,19 @@ export default function Hero({ lang, settings, count }: HeroProps) {
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <motion.div
           className="absolute top-[10%] right-[10%] w-[40vw] h-[40vw] rounded-full blur-[120px] opacity-30"
-          style={{ background: "radial-gradient(circle, #7c5cff 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #2ED2FF 0%, transparent 70%)" }}
           animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.15, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute bottom-[15%] left-[5%] w-[45vw] h-[45vw] rounded-full blur-[120px] opacity-25"
-          style={{ background: "radial-gradient(circle, #4ce2d0 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #CCD3DA 0%, transparent 70%)" }}
           animate={{ x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.2, 1] }}
           transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute top-[40%] left-[40%] w-[30vw] h-[30vw] rounded-full blur-[140px] opacity-15"
-          style={{ background: "radial-gradient(circle, #ff6b9d 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #C48A5C 0%, transparent 70%)" }}
           animate={{ x: [0, 40, -20, 0], y: [0, -30, 40, 0] }}
           transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -80,7 +88,9 @@ export default function Hero({ lang, settings, count }: HeroProps) {
         className="absolute inset-y-0 right-0 w-full lg:w-[55%] pointer-events-none"
         aria-hidden
       >
-        <DynamicVisual name="HeroCore" className="absolute inset-0" />
+        <div className="absolute inset-0">
+          <ViewportVisual name="HeroCore" className="absolute inset-0" />
+        </div>
       </div>
 
       {/* ============================================================
@@ -99,9 +109,9 @@ export default function Hero({ lang, settings, count }: HeroProps) {
       >
         <defs>
           <linearGradient id="heroCircuitGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#7c5cff" stopOpacity="0" />
-            <stop offset="50%" stopColor="#7c5cff" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#4ce2d0" stopOpacity="0" />
+            <stop offset="0%" stopColor="#2ED2FF" stopOpacity="0" />
+            <stop offset="50%" stopColor="#2ED2FF" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#C48A5C" stopOpacity="0" />
           </linearGradient>
         </defs>
         {[200, 300, 400].map((y, i) => (
@@ -123,7 +133,7 @@ export default function Hero({ lang, settings, count }: HeroProps) {
             cx={dot.cx}
             cy={dot.cy}
             r={4}
-            fill="#4ce2d0"
+            fill="#2ED2FF"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: [0, 1.4, 1], opacity: [0, 1, 0.8] }}
             transition={{
@@ -164,7 +174,7 @@ export default function Hero({ lang, settings, count }: HeroProps) {
                   cy="50"
                   r="46"
                   fill="none"
-                  stroke="rgba(124,92,255,0.15)"
+                  stroke="rgba(46,210,255,0.15)"
                   strokeWidth="0.8"
                 />
                 <motion.circle
@@ -182,8 +192,8 @@ export default function Hero({ lang, settings, count }: HeroProps) {
                 />
                 <defs>
                   <linearGradient id="statRingGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#7c5cff" />
-                    <stop offset="100%" stopColor="#4ce2d0" />
+                    <stop offset="0%" stopColor="#2ED2FF" />
+                    <stop offset="100%" stopColor="#CCD3DA" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -255,35 +265,49 @@ export default function Hero({ lang, settings, count }: HeroProps) {
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-200">
-                {T("heroEyebrow")}
+                <ShinyText speed={5}>{T("heroEyebrow")}</ShinyText>
               </span>
             </motion.div>
 
             {/* Title */}
             <motion.h1
               className="mt-8 font-display font-medium tracking-tight leading-[0.95] text-[clamp(2.5rem,8vw,6rem)]"
-              variants={textReveal}
-              initial="hidden"
-              animate="show"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
             >
-              <span className="block text-ink-0">{titleAr}</span>
-              <span
+              <ScrollRevealText
+                as="span"
+                className="block text-ink-0"
+                text={titleAr}
+                type="words"
+                stagger={0.08}
+                start="top 95%"
+              />
+              <ScrollRevealText
+                as="span"
                 className="block bg-grad-text-light dark:bg-grad-text bg-clip-text text-transparent animate-gradient-flow bg-[length:200%_100%]"
-                dir="ltr"
-              >
-                {titleEn}
-              </span>
+                text={titleEn}
+                type="words"
+                stagger={0.08}
+                start="top 95%"
+                delay={0.15}
+              />
             </motion.h1>
 
             {/* Description */}
-            <motion.p
-              className="mt-8 text-lg lg:text-xl leading-relaxed text-ink-3 max-w-2xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.7 }}
-            >
-              {desc}
-            </motion.p>
+              <BlurText text={desc} className="mt-8 text-lg lg:text-xl leading-relaxed text-ink-3 max-w-2xl" delay={0.03} />
+
+            {showCustom ? (
+              <motion.p
+                className="mt-4 font-mono text-sm uppercase tracking-[0.14em] text-ink-4"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                {customTitle}
+              </motion.p>
+            ) : null}
 
             {/* Actions */}
             <motion.div
@@ -292,29 +316,30 @@ export default function Hero({ lang, settings, count }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              <MagneticButton href="#list" className="btn-primary">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden
-                >
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-                {T("ctaExplore")}
-              </MagneticButton>
+              <StarBorder as="span" color="#2ED2FF" speed={6}>
+                <MagneticButton href="#list" className="btn-primary">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                  {T("ctaExplore")}
+                </MagneticButton>
+              </StarBorder>
               <Link href="#sl" className="btn-ghost">
                 ★ {T("ctaFeatured")}
               </Link>
             </motion.div>
 
-            {/* Meta strip */}
-            {/* Stats */}
+            {/* Stats — only verifiable figures (the published project count). */}
             <motion.div
               className="mt-10 grid grid-cols-3 gap-4 max-w-lg"
               initial={{ opacity: 0, y: 16 }}
@@ -322,13 +347,13 @@ export default function Hero({ lang, settings, count }: HeroProps) {
               transition={{ duration: 0.6, delay: 1.0 }}
             >
               {[
-                { v: count, l: ar ? "مشروع منجز" : "Projects" },
-                { v: 40, l: ar ? "عميل سعيد" : "Clients" },
-                { v: 7, l: ar ? "سنوات خبرة" : "Years" },
+                { v: count, l: ar ? "مشروع منشور" : "Published projects", suffix: "" },
+                { v: 3, l: ar ? "تخصصات هندسية" : "Engineering disciplines", suffix: "" },
+                { v: 4, l: ar ? "قطاعات نخدمها" : "Industries served", suffix: "" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="font-display text-3xl font-medium bg-grad-text-light dark:bg-grad-text bg-clip-text text-transparent">
-                    <AnimatedNumber value={s.v} />+
+                    <CountUp value={s.v} suffix={s.suffix} />
                   </div>
                   <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-ink-4">
                     {s.l}
@@ -344,9 +369,9 @@ export default function Hero({ lang, settings, count }: HeroProps) {
               transition={{ duration: 0.6, delay: 1.1 }}
             >
               {[
-                { label: T("metaEmbedded"), color: "#4ce2d0" },
-                { label: T("metaWeb"), color: "#7c5cff" },
-                { label: T("metaMobile"), color: "#ad97ff" },
+                { label: T("metaEmbedded"), color: "#2ED2FF" },
+                { label: T("metaWeb"), color: "#CCD3DA" },
+                { label: T("metaMobile"), color: "#C48A5C" },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}

@@ -1,8 +1,12 @@
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/motion/ScrollProgress";
 import CursorGlow from "@/components/motion/CursorGlow";
+import SmoothScroll from "@/components/motion/SmoothScroll";
+import PageTransition from "@/components/motion/PageTransition";
+import ClickSpark from "@/components/reactbits/ClickSpark";
 import LocaleSync from "@/components/LocaleSync";
 import { getHome } from "@/lib/data";
 import { LOCALES, isLocale, pick } from "@/lib/i18n";
@@ -13,6 +17,13 @@ import {
   websiteSchema,
   jsonLd,
 } from "@/lib/structured-data";
+
+/* Starfield runs on a 2D canvas (no WebGL) — lazy-loaded client-side so it
+   never blocks first paint and never competes for the single GPU context. */
+const StarfieldBackground = dynamic(
+  () => import("@/components/visuals/StarfieldBackground"),
+  { ssr: false },
+);
 
 export const revalidate = 60;
 
@@ -40,10 +51,12 @@ export async function generateMetadata({
       ? "أركاي للحلول البرمجية: نبني المنتجات الرقمية ومنصات الويب وحلول الذكاء الاصطناعي والأنظمة المدمجة وإنترنت الأشياء."
       : "Archai Solutions designs and builds digital products, web platforms, AI-powered workflows, and embedded/IoT systems.");
 
-  const localizedTitle =
-    lang === "ar"
-      ? `${title} | أركاي للحلول البرمجية`
-      : `${title} | Archai Solutions`;
+  const brand = lang === "ar" ? "أركاي للحلول البرمجية" : "Archai Solutions";
+  const brandMark = lang === "ar" ? "أركاي" : "Archai Solutions";
+  // Guard against a duplicate brand suffix (e.g. site_title already = "Archai Solutions").
+  const localizedTitle = title.includes(brandMark)
+    ? title
+    : `${title} | ${brand}`;
 
   const canonical = `${SITE_URL}/${lang}`;
   const keywords =
@@ -67,9 +80,15 @@ export async function generateMetadata({
           "IoT solutions",
         ];
 
+  // The brand suffix must not be appended when the resolved title already
+  // carries the brand — that is exactly what produced the duplicated
+  // "Archai Solutions | Archai Solutions" <title>. Use an absolute title so
+  // the parent layout's `%s | Archai Solutions` template is bypassed.
+  const titleMetadata = { absolute: localizedTitle };
+
   return {
     metadataBase: new URL(SITE_URL),
-    title: { default: localizedTitle, template: "%s | Archai Solutions" },
+    title: titleMetadata,
     description,
     keywords,
     applicationName: "Archai Solutions",
@@ -173,9 +192,13 @@ export default async function RootLayout({
       {/* ============================================================
           Global layers — each page renders its own WebGL Backdrop.
           ============================================================ */}
+      <StarfieldBackground />
+      <PageTransition />
+      <SmoothScroll />
       <LocaleSync lang={lang} />
       <ScrollProgress />
       <CursorGlow />
+      <ClickSpark>{" "}</ClickSpark>
 
       <Header lang={lang} cats={withProjects} />
 

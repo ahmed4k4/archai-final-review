@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
+import Gallery3D from "@/components/visuals/Gallery3D";
 import ProjectCard from "@/components/ProjectCard";
 import Backdrop from "@/components/visuals/Backdrop";
 import { getHome, getProject } from "@/lib/data";
@@ -79,8 +80,8 @@ export default async function ProjectPage({
 
   const score = (x: any) =>
     (x.category_id && x.category_id === p.category_id ? 2 : 0) +
-    x.project_technologies.filter((y) => tg.includes(y.technology)).length +
-    x.project_industries.filter((y) => ins.includes(y.industry)).length;
+    x.project_technologies.filter((y: any) => tg.includes(y.technology)).length +
+    x.project_industries.filter((y: any) => ins.includes(y.industry)).length;
 
   const related = projects
     .filter((x) => x.id !== p.id)
@@ -196,7 +197,9 @@ export default async function ProjectPage({
         {live && <div className="mt-6">{live}</div>}
       </header>
 
-      {/* Gallery */}
+      {/* Gallery — 3D screens, with the classic gallery beneath for
+          accessibility + a no-WebGL fallback. */}
+      <Gallery3D images={images} title={title} lang={lang as any} />
       <Gallery images={images} title={title} lang={lang as any} />
 
       {/* Body */}

@@ -6,7 +6,7 @@ type CategoryCardsProps = { cats: any[]; projects: any[]; lang: "ar" | "en" };
 
 export default function CategoryCards({ cats, projects, lang }: CategoryCardsProps) {
   const T = tr(lang);
-  const count = (id) => projects.filter((p) => p.category_id === id).length;
+  const count = (id: string) => projects.filter((p) => p.category_id === id).length;
   const items = cats.map((c) => ({ c, n: count(c.id) })).filter((x) => x.n > 0);
   if (!items.length) return null;
   return (

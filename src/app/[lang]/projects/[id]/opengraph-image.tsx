@@ -43,7 +43,7 @@ export default async function OGImage({
           padding: "64px",
           color: "#ffffff",
           background:
-            "linear-gradient(135deg, #030510 0%, #1a1f3a 55%, #084945 100%)",
+            "linear-gradient(135deg, #0E1317 0%, #222B33 55%, #084F67 100%)",
           position: "relative",
           overflow: "hidden",
           fontFamily: ar ? "Arial" : "Arial, sans-serif",
@@ -60,7 +60,7 @@ export default async function OGImage({
             top: "-200px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(124,92,255,.4), transparent 65%)",
+              "radial-gradient(circle, rgba(46,210,255,.4), transparent 65%)",
             filter: "blur(30px)",
           }}
         />
@@ -73,7 +73,7 @@ export default async function OGImage({
             bottom: "-180px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(76,226,208,.35), transparent 65%)",
+              "radial-gradient(circle, rgba(46,210,255,.35), transparent 65%)",
             filter: "blur(30px)",
           }}
         />
@@ -90,7 +90,7 @@ export default async function OGImage({
               height: "240px",
               borderRadius: "20px",
               overflow: "hidden",
-              border: "1px solid rgba(124,92,255,.4)",
+              border: "1px solid rgba(46,210,255,.4)",
               boxShadow: "0 20px 60px rgba(0,0,0,.5)",
               display: "flex",
             }}
@@ -129,7 +129,7 @@ export default async function OGImage({
               color: "white",
               fontSize: 26,
               fontWeight: 700,
-              background: "linear-gradient(135deg, #7c5cff, #4ce2d0)",
+              background: "linear-gradient(135deg, #2ED2FF, #2ED2FF)",
             }}
           >
             A
@@ -137,8 +137,8 @@ export default async function OGImage({
           ARCHAI
           {category && (
             <>
-              <span style={{ color: "#4ce2d0" }}>·</span>
-              <span style={{ color: "#ad97ff" }}>{category}</span>
+              <span style={{ color: "#2ED2FF" }}>·</span>
+              <span style={{ color: "#8AE8FF" }}>{category}</span>
             </>
           )}
         </div>
@@ -167,7 +167,7 @@ export default async function OGImage({
             <div
               style={{
                 fontSize: 24,
-                color: "#c5cbe0",
+                color: "#CCD3DA",
                 lineHeight: 1.45,
                 maxWidth: 720,
               }}
@@ -185,9 +185,9 @@ export default async function OGImage({
                     padding: "6px 14px",
                     fontSize: 15,
                     borderRadius: 8,
-                    background: "rgba(124,92,255,.18)",
-                    color: "#ad97ff",
-                    border: "1px solid rgba(124,92,255,.35)",
+                    background: "rgba(46,210,255,.18)",
+                    color: "#8AE8FF",
+                    border: "1px solid rgba(46,210,255,.35)",
                     fontFamily: "monospace",
                     letterSpacing: "1px",
                   }}
@@ -207,7 +207,7 @@ export default async function OGImage({
             justifyContent: "space-between",
             fontSize: 16,
             letterSpacing: "3px",
-            color: "#4ce2d0",
+            color: "#2ED2FF",
             zIndex: 2,
           }}
         >
@@ -217,13 +217,13 @@ export default async function OGImage({
                 width: 8,
                 height: 8,
                 borderRadius: 8,
-                background: "#4ce2d0",
-                boxShadow: "0 0 16px #4ce2d0",
+                background: "#2ED2FF",
+                boxShadow: "0 0 16px #2ED2FF",
               }}
             />
             {ar ? "الحلول البرمجية" : "INTEGRATED SYSTEMS"}
           </div>
-          <div style={{ color: "#8f96b8" }}>
+          <div style={{ color: "#A8B2BC" }}>
             {SITE_URL.replace(/^https?:\/\//, "")}
           </div>
         </div>

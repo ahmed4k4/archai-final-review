@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import type { Mesh } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE, mulberry32 } from "./scene-utils";
+import { COLORS as C, mulberry32 } from "./scene-system";
 
 /** A pulsing beacon emitting expanding rings, with signals converging inward. */
 function Beacon() {
@@ -19,8 +19,8 @@ function Beacon() {
     <mesh ref={ref}>
       <icosahedronGeometry args={[0.7, 3]} />
       <meshStandardMaterial
-        color={PALETTE.mint}
-        emissive={PALETTE.mint}
+        color={C.mint}
+        emissive={C.mint}
         emissiveIntensity={1.6}
         metalness={0.8}
         roughness={0.15}
@@ -91,7 +91,7 @@ function IncomingSignals() {
         >
           <sphereGeometry args={[0.05, 10, 10]} />
           <meshBasicMaterial
-            color={PALETTE.violetSoft}
+            color={C.violetSoft}
             transparent
             opacity={0.5}
             toneMapped={false}
@@ -112,11 +112,11 @@ export default function SignalBeacon({ className }: { className?: string }) {
       <Float speed={1.2} rotationIntensity={0.2} floatIntensity={0.5}>
         <Beacon />
       </Float>
-      <Wave delay={0} color={PALETTE.mint} />
-      <Wave delay={0.2} color={PALETTE.violetSoft} />
-      <Wave delay={0.4} color={PALETTE.mintSoft} />
-      <Wave delay={0.6} color={PALETTE.violet} />
-      <Wave delay={0.8} color={PALETTE.mint} />
+      <Wave delay={0} color={C.mint} />
+      <Wave delay={0.2} color={C.violetSoft} />
+      <Wave delay={0.4} color={C.mintSoft} />
+      <Wave delay={0.6} color={C.violet} />
+      <Wave delay={0.8} color={C.mint} />
       <IncomingSignals />
     </Scene3D>
   );

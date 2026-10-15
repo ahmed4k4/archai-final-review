@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { MeshTransmissionMaterial } from "@react-three/drei";
 import type { Mesh, Group } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE, mulberry32 } from "./scene-utils";
+import { COLORS as PALETTE, mulberry32 } from "./scene-system";
 
 /** Glass bubbles, each holding a question mark, floating like open questions. */
 const COUNT = 9;

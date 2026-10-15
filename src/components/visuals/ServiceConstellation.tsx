@@ -6,20 +6,20 @@ import * as THREE from "three";
 import type { Group, Mesh } from "three";
 import Scene3D from "./Scene3D";
 import {
-  PALETTE,
+  COLORS as C,
   curveBetween,
   pointOnCurve,
   spherePoints,
-} from "./scene-utils";
+} from "./scene-system";
 
 /** 6 service nodes on a sphere, wired by curved lines with packets flowing along them. */
 const COLORS = [
-  PALETTE.violet,
-  PALETTE.mint,
-  PALETTE.violetSoft,
-  PALETTE.mintSoft,
-  PALETTE.rose,
-  PALETTE.violetDeep,
+  C.violet,
+  C.mint,
+  C.violetSoft,
+  C.mintSoft,
+  C.rose,
+  C.violetDeep,
 ];
 
 const NODES = spherePoints(6, 2.1);
@@ -105,8 +105,8 @@ function Core() {
       <mesh ref={ref}>
         <icosahedronGeometry args={[0.62, 1]} />
         <meshStandardMaterial
-          color={PALETTE.violet}
-          emissive={PALETTE.violetDeep}
+          color={C.violet}
+          emissive={C.violetDeep}
           emissiveIntensity={1.1}
           metalness={0.85}
           roughness={0.12}
@@ -116,7 +116,7 @@ function Core() {
       <mesh scale={1.35}>
         <icosahedronGeometry args={[0.62, 1]} />
         <meshBasicMaterial
-          color={PALETTE.mint}
+          color={C.mint}
           wireframe
           transparent
           opacity={0.3}
@@ -160,7 +160,7 @@ export default function ServiceConstellation({
       pts: curveBetween(c1, c2, 0.55).map(
         (p) => new THREE.Vector3(p.x, p.y, p.z),
       ),
-      color: PALETTE.mintSoft,
+      color: C.mintSoft,
     });
     const c3 = new THREE.Vector3(...NODES[1]);
     const c4 = new THREE.Vector3(...NODES[4]);
@@ -168,7 +168,7 @@ export default function ServiceConstellation({
       pts: curveBetween(c3, c4, 0.55).map(
         (p) => new THREE.Vector3(p.x, p.y, p.z),
       ),
-      color: PALETTE.violetSoft,
+      color: C.violetSoft,
     });
     return list;
   }, []);
@@ -209,7 +209,7 @@ export default function ServiceConstellation({
           scale={6.5}
           size={2.2}
           speed={0.35}
-          color={PALETTE.mintSoft}
+          color={C.mintSoft}
           opacity={0.7}
         />
       </Spinner>

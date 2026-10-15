@@ -5,7 +5,7 @@ import { Sparkles, Line } from "@react-three/drei";
 import * as THREE from "three";
 import type { Group, Mesh } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE } from "./scene-utils";
+import { COLORS as PALETTE } from "./scene-system";
 
 /** Double helix — the team & values strand, rising forever. */
 const COUNT = 44;

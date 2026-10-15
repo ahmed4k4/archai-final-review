@@ -5,7 +5,7 @@ import { Float, Sparkles, Line } from "@react-three/drei";
 import * as THREE from "three";
 import type { Mesh, Group } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE, spherePoints } from "./scene-utils";
+import { COLORS as PALETTE, spherePoints } from "./scene-system";
 
 /** Crystal fragments — one per article — drifting in a golden web. */
 const NODES = spherePoints(9, 2.2);

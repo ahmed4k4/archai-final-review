@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float, Sphere } from "@react-three/drei";
 import type { Group, Mesh } from "three";
 import Scene3D from "./Scene3D";
-import { PALETTE } from "./scene-utils";
+import { COLORS as PALETTE } from "./scene-system";
 
 /** Industries as satellites orbiting a glowing aurora core. */
 const RINGS = [

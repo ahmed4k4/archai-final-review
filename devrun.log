@@ -1,0 +1,67 @@
+
+> archai-showcase-next@3.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1415ms
+ ✓ Compiled /src/middleware in 157ms (72 modules)
+ ○ Compiling /[lang] ...
+ ✓ Compiled /[lang] in 2.8s (2714 modules)
+ GET /ar 200 in 4210ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /icon.svg in 2.8s (2749 modules)
+ GET /icon.svg 200 in 2518ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 3152ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ ✓ Compiled /[lang]/portfolio in 370ms (2763 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 43ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 14ms
+ GET /ar 200 in 360ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 18ms
+ GET /icon.svg 200 in 15ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 14ms
+ GET /ar 200 in 302ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 13ms
+ GET /icon.svg 200 in 8ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ GET /ar 200 in 85ms
+ GET /icon.svg 200 in 8ms
+ GET /ar 200 in 600ms
+ GET /icon.svg 200 in 9ms
+ GET /ar 200 in 438ms
+ GET /ar 200 in 51ms
+ GET /icon.svg 200 in 8ms
+ ○ Compiling /[lang]/services ...
+ ✓ Compiled /[lang]/services in 1728ms (2779 modules)
+ GET /ar 200 in 542ms
+ GET /icon.svg 200 in 107ms
+ GET /icon.svg 200 in 146ms
+ GET /icon.svg 200 in 146ms
+ GET /icon.svg 200 in 139ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 570ms (2782 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 631ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ GET /ar 200 in 748ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+ GET /icon.svg 200 in 22ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /ar 200 in 72ms
+ GET /icon.svg 200 in 8ms
+ GET /ar 200 in 500ms
+ GET /icon.svg 200 in 6ms
+ GET /icon.svg 200 in 8ms
+ GET /ar 200 in 273ms
+ GET /icon.svg 200 in 10ms
+ GET /icon.svg 200 in 12ms
+ GET /ar 200 in 427ms
+ GET /ar 200 in 54ms
+ GET /icon.svg 200 in 11ms
+ GET /icon.svg 200 in 9ms
+ GET /ar 200 in 44ms
+ GET /icon.svg 200 in 7ms
+ GET /icon.svg 200 in 7ms

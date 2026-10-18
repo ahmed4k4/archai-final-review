@@ -1,0 +1,171 @@
+/* ============================================================
+   ARCHAI — Global CSS (minimal, Tailwind-first)
+   Only: theme tokens, reset, scrollbar, and things Tailwind can't do
+   ============================================================ */
+
+:root {
+  /* Typography — self-hosted by next/font (see src/app/layout.tsx).
+     Each --font-* below points at the generated family variable, with a
+     sensible system fallback if the class is ever missing. */
+  --font-sans: var(--font-readex), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-sora), var(--font-readex), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-arabic: var(--font-plex-arabic), var(--font-readex), system-ui, sans-serif;
+
+  /* Layout */
+  --header-h: 76px;
+  --wrap: 1280px;
+
+  /* Dark theme (default) — official brand palette
+     Carbon #1B2228 · Panel #222B33 · Silver #CCD3DA
+     Arc Blue #2ED2FF · Copper #C48A5C */
+  --bg-0: #141A1F;
+  --bg-1: #1B2228;
+  --bg-2: #222B33;
+  --bg-3: #2A333B;
+  --ink-0: #F6F8FA;
+  --ink-1: #E9EDF0;
+  --ink-2: #CCD3DA;
+  --ink-3: #A8B2BC;
+  --ink-4: #78848F;
+  --line-1: rgba(204, 211, 218, 0.06);
+  --line-2: rgba(204, 211, 218, 0.12);
+  --line-3: rgba(204, 211, 218, 0.2);
+  --line-violet: rgba(46, 210, 255, 0.4);
+  --line-mint: rgba(46, 210, 255, 0.4);
+  --line-arc: rgba(46, 210, 255, 0.4);
+  --line-copper: rgba(196, 138, 92, 0.4);
+  --bg-glass: rgba(27, 34, 40, 0.72);
+
+  /* Admin surfaces */
+  --ad-panel: rgba(27, 34, 40, 0.72);
+  --ad-panel-2: rgba(255, 255, 255, 0.03);
+  --ad-line: rgba(204, 211, 218, 0.12);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-0: #F6F8FA;
+  --bg-1: #FFFFFF;
+  --bg-2: #FFFFFF;
+  --bg-3: #E9EDF0;
+  --ink-0: #141A1F;
+  --ink-1: #1B2228;
+  --ink-2: #2A333B;
+  --ink-3: #55616C;
+  --ink-4: #78848F;
+  --line-1: rgba(27, 34, 40, 0.06);
+  --line-2: rgba(27, 34, 40, 0.12);
+  --line-3: rgba(27, 34, 40, 0.2);
+  --line-violet: rgba(14, 144, 184, 0.3);
+  --line-mint: rgba(14, 144, 184, 0.3);
+  --line-arc: rgba(14, 144, 184, 0.3);
+  --line-copper: rgba(174, 115, 71, 0.3);
+  --bg-glass: rgba(255, 255, 255, 0.82);
+
+  /* Admin surfaces (light) */
+  --ad-panel: rgba(255, 255, 255, 0.9);
+  --ad-panel-2: rgba(27, 34, 40, 0.03);
+  --ad-line: rgba(27, 34, 40, 0.12);
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* Lenis owns smooth scrolling; a native `scroll-behavior: smooth` here fights
+     it (the lenis-smooth class is dropped once scrolling settles, which would
+     re-enable native smoothing mid-gesture and snap the page back). */
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: calc(var(--header-h) + 20px);
+}
+
+html.no-smooth, html.no-smooth * { scroll-behavior: auto !important; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-0);
+  color: var(--ink-0);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.65;
+  font-synthesis: none;
+  transition: background 500ms cubic-bezier(0.4,0,0.2,1), color 500ms cubic-bezier(0.4,0,0.2,1);
+}
+
+[dir="rtl"] body { font-family: var(--font-arabic); }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(46,210,255,.14), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 70%, rgba(46,210,255,.10), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(196,138,92,.05), transparent 70%);
+  animation: nebula-drift 30s ease-in-out infinite alternate;
+}
+
+:root[data-theme="light"] body::before { opacity: 0.02; mix-blend-mode: multiply; }
+:root[data-theme="light"] body::after {
+  background:
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(46,210,255,.07), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 70%, rgba(46,210,255,.06), transparent 60%);
+}
+
+@keyframes nebula-drift {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(2%, -2%); }
+}
+
+/* Base elements */
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+input, select, textarea { font: inherit; }
+
+::selection { background: #2ED2FF; color: #fff; }
+:root[data-theme="light"] ::selection { background: rgba(103, 66, 240, 0.22); color: #0e1024; }
+
+/* Scrollbar */
+* { scrollbar-width: thin; scrollbar-color: #5230d1 transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #17B4E0, #0E90B8);
+  border-radius: 9999px;
+}
+
+:focus-visible {
+  outline: 2px solid #5CDDFF;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

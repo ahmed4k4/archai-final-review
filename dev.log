@@ -1,0 +1,1776 @@
+
+> archai-showcase-next@3.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1550ms
+ ✓ Compiled /src/middleware in 103ms (72 modules)
+ ○ Compiling /[lang] ...
+ ✓ Compiled /[lang] in 2.2s (2714 modules)
+ GET /ar 200 in 3511ms
+ GET /ar 200 in 88ms
+ GET /ar 200 in 71ms
+ ✓ Compiled /icon.svg in 235ms (1453 modules)
+ GET /icon.svg 200 in 283ms
+ GET /ar 200 in 156ms
+ GET /icon.svg 200 in 10ms
+ GET /en 200 in 61ms
+ GET /icon.svg 200 in 6ms
+ GET /en 200 in 51ms
+ GET /icon.svg 200 in 7ms
+ ○ Compiling /[lang]/portfolio ...
+ ✓ Compiled /[lang]/portfolio in 556ms (2760 modules)
+ GET /ar/portfolio 200 in 940ms
+ GET /icon.svg 200 in 16ms
+ GET /ar/portfolio 200 in 31ms
+ GET /icon.svg 200 in 7ms
+ ✓ Compiled /[lang]/services in 384ms (2773 modules)
+ GET /ar/services 200 in 733ms
+ GET /icon.svg 200 in 12ms
+ GET /icon.svg 200 in 20ms
+ GET /ar/services 200 in 43ms
+ GET /icon.svg 200 in 15ms
+ ✓ Compiled /admin/login in 418ms (2912 modules)
+ GET /admin/login 200 in 514ms
+ GET /icon.svg 200 in 7ms
+ GET /admin/login 200 in 22ms
+ GET /icon.svg 200 in 8ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 2.7s (3960 modules)
+ GET /admin 200 in 3126ms
+ GET /icon.svg 200 in 13ms
+ GET /icon.svg 200 in 6ms
+ GET /admin 200 in 23ms
+ GET /icon.svg 200 in 13ms
+ GET /icon.svg 200 in 6ms
+ GET /ar/services 200 in 603ms
+ GET /icon.svg 200 in 8ms
+ GET /ar/services 200 in 41ms
+ GET /icon.svg 200 in 22ms
+ GET /ar 200 in 824ms
+ GET /icon.svg 200 in 6ms
+ GET /ar 200 in 60ms
+ GET /icon.svg 200 in 8ms
+ GET /ar 200 in 68ms
+ GET /icon.svg 200 in 7ms
+ GET /en 200 in 68ms
+ GET /icon.svg 200 in 7ms
+ GET /en 200 in 58ms
+ GET /icon.svg 200 in 8ms
+ GET /ar/portfolio 200 in 46ms
+ GET /icon.svg 200 in 7ms
+ GET /ar/portfolio 200 in 35ms
+ GET /icon.svg 200 in 8ms
+ GET /ar/services 200 in 31ms
+ GET /icon.svg 200 in 22ms
+ GET /ar/services 200 in 39ms
+ GET /icon.svg 200 in 8ms
+ GET /icon.svg 200 in 17ms
+ GET /admin/login 200 in 27ms
+ GET /icon.svg 200 in 7ms
+ GET /admin/login 200 in 19ms
+ GET /icon.svg 200 in 6ms
+ GET /admin 200 in 17ms
+ GET /icon.svg 200 in 12ms
+ GET /icon.svg 200 in 8ms
+ GET /admin 200 in 20ms
+ GET /icon.svg 200 in 10ms
+ GET /icon.svg 200 in 6ms
+ GET /ar/portfolio 200 in 774ms
+ GET /ar/portfolio 200 in 639ms
+ GET /icon.svg 200 in 12ms
+ GET /ar/portfolio 200 in 39ms
+ GET /icon.svg 200 in 8ms
+ ✓ Compiled in 1676ms (3417 modules)
+ ✓ Compiled in 870ms (3417 modules)
+ ✓ Compiled in 1493ms (3417 modules)
+ ✓ Compiled in 538ms (1906 modules)
+ GET /ar 200 in 174ms
+ GET /ar 200 in 11025ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1013ms (3420 modules)
+ GET /ar 404 in 1087ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+ GET /_next/static/css/app/layout.css?v=1792345281408 404 in 20ms
+ GET /_next/static/chunks/main-app.js?v=1792345281408 404 in 30ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 27ms
+ ✓ Compiled /icon.svg in 444ms (1544 modules)
+ GET /icon.svg 200 in 488ms
+ ⨯ Failed to generate static paths for /[lang]:
+Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+Warning: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+ ⨯ TypeError: Cannot read properties of null (reading 'useEffect')
+    at LocaleSync (./src/components/LocaleSync.tsx:15:53)
+digest: "3247832038"
+Warning: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:162364)
+    at usePathname (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/navigation.js:121:34)
+    at ErrorBoundary (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/error-boundary.js:159:50)
+    at au (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:46505)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:58612
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59270
+    at aN (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59278)
+    at Timeout._onTimeout (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:6939)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+ ⨯ TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:162364)
+    at usePathname (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/navigation.js:121:34)
+    at ErrorBoundary (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/error-boundary.js:159:50)
+    at au (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:46505)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:58612
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59270
+    at aN (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59278)
+    at Timeout._onTimeout (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:6939)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7) {
+  page: '/ar'
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+Warning: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+ ⨯ TypeError: Cannot read properties of null (reading 'useEffect')
+    at LocaleSync (./src/components/LocaleSync.tsx:15:53)
+digest: "3247832038"
+Warning: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:162364)
+    at usePathname (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/navigation.js:121:34)
+    at ErrorBoundary (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/error-boundary.js:159:50)
+    at au (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:46505)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:58612
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59270
+    at aN (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59278)
+    at Timeout._onTimeout (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:6939)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+ ⨯ TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:162364)
+    at usePathname (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/navigation.js:121:34)
+    at ErrorBoundary (webpack-internal:///(ssr)/./node_modules/next/dist/client/components/error-boundary.js:159:50)
+    at au (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:46505)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:58612
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59270
+    at aN (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:59278)
+    at Timeout._onTimeout (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:6939)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7) {
+  page: '/ar'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1227ms (3664 modules)
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET /ar 200 in 7213ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 50ms
+ GET /_next/static/css/app/layout.css?v=1792345286129 404 in 52ms
+ GET /_next/static/chunks/main-app.js?v=1792345286129 404 in 24ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 404 in 29ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 34ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 404 in 28ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 404 in 29ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 213ms
+ GET /icon.svg 200 in 13ms
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 201ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 210ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 202ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 209ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 199ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 208ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 204ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 206ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 207ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 14ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 205ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 200ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 13ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 205ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 204ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 203ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 199ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 206ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 202ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 206ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 200ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 214ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 201ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 204ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\lenis.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lenis' in C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server for build dependencies doesn't lead to expected result 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\lenis.js', but to 'Error: Can't resolve './vendor-chunks/lenis' in 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lenis (expected C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\lenis.js)
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server for build dependencies doesn't lead to expected result 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lucide-react' in C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server for build dependencies doesn't lead to expected result 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\lucide-react.js', but to 'Error: Can't resolve './vendor-chunks/lucide-react' in 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lucide-react (expected C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\lucide-react.js)
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/iceberg-js' in C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server for build dependencies doesn't lead to expected result 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\iceberg-js.js', but to 'Error: Can't resolve './vendor-chunks/iceberg-js' in 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/iceberg-js (expected C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\iceberg-js.js)
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server for build dependencies doesn't lead to expected result 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 2782ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 30ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 200ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 197ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 211ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 199ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 195ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 195ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\app\\[lang]\\page.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 198ms
+ GET /ar 404 in 12ms
+ GET /favicon.ico 404 in 16ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 10ms
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET /ar 200 in 7815ms
+ GET /ar 200 in 621ms
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET /ar 200 in 7121ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ GET /icon.svg 200 in 10ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 11ms
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET /ar 200 in 7147ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 23ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+[data] home: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND btseevpvtxpuvxlmvzkt.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET /favicon.ico 404 in 7104ms
+ GET /icon.svg 200 in 12ms
+ GET /ar 200 in 867ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /favicon.ico 404 in 375ms
+ GET /icon.svg 200 in 12ms
+ GET /ar 200 in 536ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ GET /ar 200 in 206ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /favicon.ico 404 in 814ms
+ GET /icon.svg 200 in 9ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 12ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 9ms
+ GET /favicon.ico 404 in 7ms
+ GET /ar 404 in 12ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 22ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 13ms
+ GET /favicon.ico 404 in 12ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 12ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+[?25h

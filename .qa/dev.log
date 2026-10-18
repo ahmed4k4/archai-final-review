@@ -1,0 +1,114 @@
+
+> archai-showcase-next@3.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1391ms
+ ✓ Compiled /src/middleware in 474ms (72 modules)
+ ○ Compiling /[lang] ...
+ ✓ Compiled /[lang] in 11.9s (2858 modules)
+ ⨯ Error: Invalid src prop (https://btseevpvtxpuvxlmvzkt.supabase.co/storage/v1/object/public/project-media/projects/97e18b4a-eb0a-418c-84cf-f02ff34b473e/1791639655138-7b2602ac3d21.webp) on `next/image`, hostname "btseevpvtxpuvxlmvzkt.supabase.co" is not configured under images in your `next.config.js`
+See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host
+    at Array.map (<anonymous>)
+digest: "673212796"
+ GET /ar 500 in 13589ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4.8s (2846 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 4869ms
+ ⨯ Error: Invalid src prop (https://btseevpvtxpuvxlmvzkt.supabase.co/storage/v1/object/public/project-media/projects/97e18b4a-eb0a-418c-84cf-f02ff34b473e/1791639655138-7b2602ac3d21.webp) on `next/image`, hostname "btseevpvtxpuvxlmvzkt.supabase.co" is not configured under images in your `next.config.js`
+See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host
+    at Array.map (<anonymous>)
+digest: "673212796"
+ GET /ar 500 in 646ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 12ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 11ms
+ GET /favicon.ico 404 in 260ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 879ms (3058 modules)
+ GET /ar 404 in 1045ms
+ GET /en 404 in 19ms
+ GET /en 404 in 11ms
+ GET /ar 404 in 16ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 9ms
+ GET /favicon.ico 404 in 10ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 7ms
+ GET /en 404 in 14ms
+ GET /ar 404 in 14ms
+ ⨯ Error: Cannot find module './8948.js'
+Require stack:
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\pages\_document.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\build\utils.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\hot-middleware.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\start-server.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16)
+    at __webpack_require__.f.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\webpack-runtime.js:162:22)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js:1:38862
+    at Object.<anonymous> (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\.next\server\app\[lang]\page.js:1:38955)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\require.js:109:84)
+    at C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js:103:84
+    at async loadComponentsImpl (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\next-server.js:714:36)
+    at async DevServer.findPageComponents (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\pc\OneDrive\Desktop\archai-next-refactored\archai-seo-3d-upgrade\archai-final-review\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'C:\\Users\\pc\\OneDrive\\Desktop\\archai-next-refactored\\archai-seo-3d-upgrade\\archai-final-review\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/ar'
+}
+ GET /ar 500 in 147ms
+[?25h

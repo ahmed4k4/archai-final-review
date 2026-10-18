@@ -1,0 +1,330 @@
+
+> archai-showcase-next@3.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1538ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 2.1s (2354 modules)
+ GET /admin 200 in 2806ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 1180ms (2398 modules)
+ ✓ Compiled /src/middleware in 130ms (72 modules)
+ ○ Compiling /[lang] ...
+ ✓ Compiled /[lang] in 1958ms (3304 modules)
+ GET /ar 200 in 3069ms
+ ✓ Compiled /icon.svg in 118ms (1453 modules)
+ GET /icon.svg 200 in 169ms
+ GET /ar 200 in 730ms
+ GET /ar 200 in 438ms
+ GET /icon.svg 200 in 9ms
+ GET /ar 200 in 415ms
+ GET /icon.svg 200 in 8ms
+ GET /ar 200 in 53ms
+ GET /icon.svg 200 in 12ms
+ GET /ar 200 in 64ms
+ GET /icon.svg 200 in 9ms
+ ○ Compiling /[lang]/portfolio ...
+ ✓ Compiled /[lang]/portfolio in 4.7s (3364 modules)
+ GET /icon.svg 200 in 13ms
+ GET /ar/portfolio 200 in 5042ms
+ GET /icon.svg 200 in 8ms
+ GET /ar 200 in 843ms
+ GET /icon.svg 200 in 10ms
+ GET /ar/portfolio 200 in 44ms
+ GET /icon.svg 200 in 10ms
+ GET /ar 200 in 56ms
+ GET /icon.svg 200 in 7ms
+ ✓ Compiled /admin/login in 299ms (1502 modules)
+ GET /admin/login 200 in 516ms
+ GET /admin/login 200 in 21ms
+ ✓ Compiled /icon.svg in 149ms (1534 modules)
+ GET /icon.svg 200 in 196ms
+ GET /ar 200 in 612ms
+ GET /ar 200 in 77ms
+ GET /icon.svg 200 in 9ms
+ GET /ar/portfolio 200 in 41ms
+ GET /icon.svg 200 in 9ms
+ GET /ar 200 in 520ms
+ GET /ar 200 in 66ms
+ GET /icon.svg 200 in 9ms
+ GET /ar/portfolio 200 in 39ms
+ GET /icon.svg 200 in 9ms
+ GET /ar/portfolio 200 in 324ms
+ GET /icon.svg 200 in 10ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 923ms (2052 modules)
+ GET /admin 200 in 2361ms
+ GET /ar 200 in 1388ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1095ms (3335 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1330ms
+ ✓ Compiled /icon.svg in 147ms (1463 modules)
+ GET /icon.svg 200 in 227ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 52ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ ○ Compiling /[lang]/services ...
+ ✓ Compiled /[lang]/services in 845ms (3366 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+ ○ Compiling /[lang]/industries ...
+ ✓ Compiled /[lang]/industries in 626ms (3368 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 23ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+ ○ Compiling /[lang]/categories/[slug] ...
+ ✓ Compiled /[lang]/categories/[slug] in 749ms (3372 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 26ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 14ms
+ ✓ Compiled in 1406ms (3349 modules)
+ ✓ Compiled /_not-found in 318ms (3338 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 394ms
+ ✓ Compiled in 550ms (3352 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 45ms
+ ✓ Compiled in 660ms (3352 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 30ms
+ GET /ar 200 in 576ms
+ ✓ Compiled /icon.svg in 299ms (1475 modules)
+ GET /icon.svg 200 in 365ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 60ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 904ms (2065 modules)
+ GET /admin 200 in 2777ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 14ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ ○ Compiling /admin/content ...
+ ✓ Compiled /admin/content in 843ms (3974 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 31ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /ar 200 in 471ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /ar 200 in 442ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 18ms
+ GET /icon.svg 200 in 21ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ ○ Compiling /[lang]/services ...
+ ✓ Compiled /[lang]/services in 575ms (2075 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 33ms
+ ○ Compiling /[lang]/about ...
+ ✓ Compiled /[lang]/about in 765ms (3985 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+ ○ Compiling /[lang]/insights ...
+ ✓ Compiled /[lang]/insights in 537ms (3987 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 28ms
+ ○ Compiling /[lang]/careers ...
+ ✓ Compiled /[lang]/careers in 570ms (3989 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ ○ Compiling /[lang]/case-studies ...
+ ✓ Compiled /[lang]/case-studies in 561ms (3988 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 26ms
+ ○ Compiling /[lang]/faq ...
+ ✓ Compiled /[lang]/faq in 553ms (3990 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 18ms
+ GET /ar 200 in 340ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 13ms
+ GET /icon.svg 200 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+ GET /llms.txt 404 in 315ms
+ ✓ Compiled /robots.txt in 317ms (1537 modules)
+ GET /robots.txt 200 in 414ms
+ GET /ar 200 in 413ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 18ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+ GET /ar 200 in 269ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+ ✓ Compiled in 781ms (3439 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 46ms
+ GET /ar 200 in 727ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+ GET /icon.svg 200 in 19ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+ GET /llms.txt 404 in 1101ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 870ms (3600 modules)
+ GET /_next/static/css/app/layout.css?v=1792351374314 404 in 1370ms
+ ✓ Compiled /robots.txt in 250ms (1559 modules)
+ GET /robots.txt 200 in 569ms
+ GET /ar 500 in 244ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 20ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /ar 200 in 721ms
+ GET /_next/static/css/app/layout.css?v=1792351391330 500 in 2060ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 2118ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 98ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 98ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 97ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 97ms
+ GET /_next/static/css/app/layout.css?v=1792351393887 500 in 20ms
+ GET /ar 200 in 1189ms
+ GET /_next/static/chunks/main-app.js?v=1792351393887 500 in 42ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 41ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 39ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 37ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 36ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 12ms
+ GET /ar 200 in 227ms
+ GET /_next/static/css/app/layout.css?v=1792351397771 500 in 10ms
+ GET /_next/static/chunks/main-app.js?v=1792351397771 500 in 39ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 38ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 36ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 33ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 33ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 11ms
+ GET /icon.svg 500 in 20ms
+ GET /ar 200 in 384ms
+ GET /_next/static/css/app/layout.css?v=1792351402192 500 in 11ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 9ms
+ GET /_next/static/chunks/main-app.js?v=1792351402192 500 in 42ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 41ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 39ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 39ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 38ms
+ GET /icon.svg 500 in 18ms
+ GET /ar 200 in 220ms
+ GET /_next/static/css/app/layout.css?v=1792351402984 500 in 11ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 46ms
+ GET /_next/static/chunks/main-app.js?v=1792351402984 500 in 44ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 43ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 42ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 41ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 39ms
+ GET /icon.svg 500 in 19ms
+ GET /ar 200 in 223ms
+ GET /_next/static/css/app/layout.css?v=1792351403972 500 in 11ms
+ GET /_next/static/chunks/main-app.js?v=1792351403972 500 in 48ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 46ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 46ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 44ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 43ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 12ms
+ GET /favicon.ico 404 in 327ms
+ GET /icon.svg 500 in 21ms
+ GET /ar 200 in 305ms
+ GET /_next/static/css/app/layout.css?v=1792351413624 500 in 10ms
+ GET /_next/static/chunks/main-app.js?v=1792351413624 500 in 50ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 47ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 46ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 44ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 43ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 41ms
+ GET /favicon.ico 404 in 177ms
+ GET /ar 200 in 255ms
+ GET /_next/static/css/app/layout.css?v=1792351414132 500 in 13ms
+ GET /_next/static/chunks/main-app.js?v=1792351414132 500 in 52ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 47ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 44ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 43ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 42ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 40ms
+ GET /favicon.ico 404 in 266ms
+ GET /icon.svg 500 in 19ms
+ GET /ar 200 in 203ms
+ GET /_next/static/css/app/layout.css?v=1792351415190 500 in 10ms
+ GET /_next/static/chunks/main-app.js?v=1792351415190 500 in 57ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 54ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 53ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 52ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 51ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 46ms
+ GET /favicon.ico 404 in 210ms
+ GET /icon.svg 500 in 15ms
+ GET /ar 200 in 194ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 11ms
+ GET /_next/static/css/app/layout.css?v=1792351416226 500 in 12ms
+ GET /_next/static/chunks/main-app.js?v=1792351416226 500 in 43ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 41ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 40ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 38ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 38ms
+ GET /favicon.ico 404 in 181ms
+ GET /icon.svg 500 in 19ms
+ GET /ar 200 in 346ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 14ms
+ GET /_next/static/css/app/layout.css?v=1792351423506 500 in 10ms
+ GET /_next/static/chunks/main-app.js?v=1792351423506 500 in 44ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 43ms
+ GET /_next/static/chunks/app/%5Blang%5D/page.js 500 in 43ms
+ GET /_next/static/chunks/app/%5Blang%5D/not-found.js 500 in 42ms
+ GET /_next/static/chunks/app/%5Blang%5D/layout.js 500 in 42ms
+ GET /favicon.ico 404 in 351ms
+ GET /icon.svg 500 in 14ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 18ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 41ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 16ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 14ms
+ GET /favicon.ico 404 in 14ms
+ GET /ar 404 in 24ms
+ GET /ar 404 in 13ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 16ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 12ms
+ GET /ar 404 in 17ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 13ms
+ GET /ar 404 in 10ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 16ms
+ GET /ar 404 in 13ms
+ GET /ar 404 in 16ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 18ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 18ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 17ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 19ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 13ms
+ GET /ar 404 in 13ms
+ GET /ar 404 in 14ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 11ms
+ GET /ar 404 in 16ms
+ GET /ar 404 in 15ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 7ms
+ GET /ar 404 in 8ms
+ GET /ar 404 in 9ms
+ GET /ar 404 in 15ms
+[?25h

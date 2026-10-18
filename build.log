@@ -1,0 +1,94 @@
+
+> archai-showcase-next@3.0.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/44) ...
+   Generating static pages (11/44) 
+   Generating static pages (22/44) 
+   Generating static pages (33/44) 
+ ✓ Generating static pages (44/44)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                              Size     First Load JS
+┌ ○ /_not-found                                          880 B          88.9 kB
+├ ● /[lang]                                              10.3 kB         174 kB
+├   ├ /ar
+├   └ /en
+├ ● /[lang]/about                                        1.02 kB         153 kB
+├   ├ /ar/about
+├   └ /en/about
+├ ● /[lang]/careers                                      214 B           152 kB
+├   ├ /ar/careers
+├   └ /en/careers
+├ ● /[lang]/case-studies                                 214 B           152 kB
+├   ├ /ar/case-studies
+├   └ /en/case-studies
+├ ● /[lang]/categories/[slug]                            1.7 kB          154 kB
+├   ├ /ar/categories/web
+├   ├ /ar/categories/mobile
+├   ├ /en/categories/web
+├   └ /en/categories/mobile
+├ ● /[lang]/contact                                      213 B           152 kB
+├   ├ /ar/contact
+├   └ /en/contact
+├ ● /[lang]/faq                                          214 B           152 kB
+├   ├ /ar/faq
+├   └ /en/faq
+├ ● /[lang]/industries                                   214 B           152 kB
+├   ├ /ar/industries
+├   └ /en/industries
+├ ● /[lang]/insights                                     214 B           152 kB
+├   ├ /ar/insights
+├   └ /en/insights
+├ ƒ /[lang]/opengraph-image                              0 B                0 B
+├ ● /[lang]/portfolio                                    5.96 kB         154 kB
+├   ├ /ar/portfolio
+├   └ /en/portfolio
+├ ● /[lang]/process                                      214 B           152 kB
+├   ├ /ar/process
+├   └ /en/process
+├ ● /[lang]/projects/[id]                                221 kB          369 kB
+├   ├ /ar/projects/97e18b4a-eb0a-418c-84cf-f02ff34b473e
+├   └ /en/projects/97e18b4a-eb0a-418c-84cf-f02ff34b473e
+├ ƒ /[lang]/projects/[id]/opengraph-image                0 B                0 B
+├ ● /[lang]/services                                     213 B           152 kB
+├   ├ /ar/services
+├   └ /en/services
+├ ○ /admin                                               4.89 kB         326 kB
+├ ○ /admin/analytics                                     1.95 kB         315 kB
+├ ○ /admin/categories                                    5.24 kB         197 kB
+├ ○ /admin/content                                       6.29 kB         208 kB
+├ ○ /admin/login                                         3.84 kB         196 kB
+├ ○ /admin/projects                                      6.95 kB         169 kB
+├ ƒ /admin/projects/[id]/media                           41.1 kB         252 kB
+├ ○ /admin/seo                                           6.51 kB         207 kB
+├ ○ /admin/settings                                      5.14 kB         207 kB
+├ ○ /admin/tools                                         6.83 kB         208 kB
+├ ƒ /api/revalidate                                      0 B                0 B
+├ ○ /icon.svg                                            0 B                0 B
+├ ƒ /opengraph-image                                     0 B                0 B
+├ ○ /robots.txt                                          0 B                0 B
+└ ○ /sitemap.xml                                         0 B                0 B
++ First Load JS shared by all                            88 kB
+  ├ chunks/2117-702547ae1b0f3a3f.js                      31.9 kB
+  ├ chunks/fd9d1056-8f1320f498172c05.js                  53.6 kB
+  └ other shared chunks (total)                          2.44 kB
+
+
+ƒ Middleware                                             26.9 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses getStaticProps)
+ƒ  (Dynamic)  server-rendered on demand
+
+DONE_ 

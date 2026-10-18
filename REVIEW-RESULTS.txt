@@ -1,0 +1,36 @@
+Archai Showcase review results
+
+Fixed in this revision:
+- SQL tables/indexes/policies/triggers made safer to re-run.
+- Seed rows are conflict-safe.
+- Explicit grants + RLS policies included.
+- pg_cron is optional; install no longer depends on enabling it.
+- Analytics tracking validates published projects and records real routes/project IDs.
+- Project save reports errors from related technology/industry tables and cache revalidation.
+- Category changes revalidate the public cache.
+- Added docs/SQL-REVIEW.md with the install order and verification steps.
+
+Verified in this environment (updated):
+- npm install completed; node_modules present.
+- npm run typecheck passes (exit 0).
+- npm run build passes (exit 0, 44 static pages generated).
+- Dev server runs; pages opened in a headless browser at 375px and 1440px
+  with 0 console errors and 0 failed network requests.
+
+Still not verified from this environment:
+- SQL has not been executed against the user's hosted Supabase project.
+- Live Supabase admin login (real credentials) has not been exercised.
+
+
+SQL files present (all three are live and required):
+- supabase/01_setup.sql         — schema, RLS, functions, storage bucket,
+                                  JSONB content columns, partial indexes,
+                                  analytics retention, prune_orphan_images()
+- supabase/02_make_admin.sql    — promote the Auth user to admin
+- supabase/03_media_system.sql  — media roles, ordering, reorder/assign helpers
+
+(04_optimize.sql was merged into 01_setup.sql and removed.)
+
+- Admin provisioning does not write to auth.users/auth.identities or
+  generated confirmed_at. Create the Auth user through the Supabase
+  Dashboard first.
